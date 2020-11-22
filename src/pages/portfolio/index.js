@@ -4,7 +4,11 @@ import { Layout } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
 
 const Portfolio = () => {
-  return;
+  return (
+    <Layout>
+      <Header>하이</Header>
+    </Layout>
+  );
 };
 
 export default Portfolio;

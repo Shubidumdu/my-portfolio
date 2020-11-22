@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Header = () => {
-  return 'hi';
-};
+const Header = () => {};
 
 export default Header;
