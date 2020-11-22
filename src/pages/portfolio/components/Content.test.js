@@ -1,12 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Header from './Header';
+import Content from './Content';
 
-describe(`Header Component`, () => {
+describe(`Content Component`, () => {
   test(`should renders properly`, () => {
-    render(<Header />);
-    const buttons = screen.getAllByRole('button');
-    expect(buttons).toHaveLength(5);
+    render(<Content />);
   });
 });

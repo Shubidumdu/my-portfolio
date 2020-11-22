@@ -1,12 +1,15 @@
 import React from 'react';
 import { Layout } from 'antd';
+import Header from './components/Header';
+import Content from './components/Content';
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Footer, Sider } = Layout;
 
 const Portfolio = () => {
   return (
     <Layout>
-      <Header>하이</Header>
+      <Header />
+      <Content />
     </Layout>
   );
 };
