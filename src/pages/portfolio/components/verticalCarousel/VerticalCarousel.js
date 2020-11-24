@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext } from 'react';
 import Carousel from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.less';
 import 'slick-carousel/slick/slick-theme.less';
+import { useSlick } from './hooks';
+import { SlickContext } from '../..';
 
 const settings = {
   dots: false,
@@ -26,7 +28,7 @@ const StyledCarousel = styled(Carousel)`
 const vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-const Card = styled.div`
+export const Card = styled.div`
   width: 100%;
   // 64px => Header's height
   height: calc(100vh - 64px);
@@ -36,19 +38,19 @@ const Card = styled.div`
 `;
 
 const VerticalCarousel = () => {
-  const slick = useRef(null);
-  useEffect(() => {
-    window.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      e.deltaY > 0 ? slick.current.slickNext() : slick.current.slickPrev();
-    });
-  }, []);
+  const { ref, setIndex } = useContext(SlickContext);
+  const beforeChange = (_, idx) => {
+    setIndex(idx);
+  };
 
   return (
-    <StyledCarousel ref={slick} {...settings}>
+    <StyledCarousel ref={ref} beforeChange={beforeChange} {...settings}>
       <Card>안녕하세요1</Card>
       <Card>안녕하세요2</Card>
       <Card>안녕하세요3</Card>
+      <Card>안녕하세요4</Card>
+      <Card>안녕하세요5</Card>
+      <Card>안녕하세요6</Card>
     </StyledCarousel>
   );
 };
