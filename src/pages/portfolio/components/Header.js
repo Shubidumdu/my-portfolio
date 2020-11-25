@@ -1,8 +1,23 @@
 import React, { useContext } from 'react';
 import { Layout, Menu } from 'antd';
 import { SlickContext } from '..';
+import styled, { useTheme } from 'styled-components';
 
 const { Header: H } = Layout;
+
+const StyledHeader = styled(H)`
+  background: ${({ theme }) => theme.colors.base};
+  height: 64px;
+  transition: 0.3s;
+
+  & > ul > li {
+    transition: 0.3s !important;
+  }
+
+  .ant-menu-horizontal {
+    border-bottom: 0;
+  }
+`;
 
 const categories = [
   'HOME',
@@ -15,13 +30,14 @@ const categories = [
 
 const Header = () => {
   const { index: slickIndex, ref: slick } = useContext(SlickContext);
+  const { mode } = useTheme();
 
   return (
-    <H>
+    <StyledHeader>
       <Menu
         selectedKeys={[slickIndex.toString()]}
         mode="horizontal"
-        theme="dark"
+        theme={mode}
         style={{ textAlign: 'center' }}
       >
         {categories.map((category, idx) => {
@@ -36,7 +52,7 @@ const Header = () => {
           );
         })}
       </Menu>
-    </H>
+    </StyledHeader>
   );
 };
 

@@ -1,8 +1,14 @@
-import React, { createContext, useContext } from 'react';
-import { Layout } from 'antd';
+import React, { createContext } from 'react';
+import { Layout as L } from 'antd';
 import Header from './components/Header';
 import Content from './components/Content';
 import { useSlick } from './components/verticalCarousel/hooks';
+import ThemeSwitch from './components/ThemeSwitch';
+import styled from 'styled-components';
+
+const StyledLayout = styled(L)`
+  background: ${({ theme }) => theme.colors.base};
+`;
 
 export const SlickContext = createContext(null);
 
@@ -11,10 +17,11 @@ const Portfolio = () => {
 
   return (
     <SlickContext.Provider value={slick}>
-      <Layout>
+      <StyledLayout>
         <Header />
         <Content />
-      </Layout>
+        <ThemeSwitch />
+      </StyledLayout>
     </SlickContext.Provider>
   );
 };

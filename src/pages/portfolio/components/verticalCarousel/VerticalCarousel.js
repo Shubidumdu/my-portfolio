@@ -22,6 +22,7 @@ const settings = {
 const StyledCarousel = styled(Carousel)`
   .slick-slide {
     border: none;
+    outline: none;
   }
 `;
 
@@ -30,10 +31,12 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 export const Card = styled.div`
   width: 100%;
+  border: none;
   // 64px => Header's height
   height: calc(100vh - 64px);
   height: calc(var(--vh, 1vh) * 100 - 64px);
-  background: #fff;
+  background: ${({ theme }) => theme.colors.base};
+  transition: 0.3s;
   cursor: grab;
 `;
 
