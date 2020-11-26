@@ -5,9 +5,11 @@ import 'slick-carousel/slick/slick.less';
 import 'slick-carousel/slick/slick-theme.less';
 import { useSlick } from './hooks';
 import { SlickContext } from '../..';
+import ContentCarousel from '../contentCarousel/ContentCarousel';
 
 const settings = {
   dots: false,
+  accessibility: false,
   arrows: false,
   infinite: false,
   draggable: true,
@@ -40,6 +42,10 @@ export const Card = styled.div`
   background: ${({ theme }) => theme.colors.base};
   transition: 0.3s;
   cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
 `;
 
 const VerticalCarousel = () => {
@@ -50,7 +56,9 @@ const VerticalCarousel = () => {
 
   return (
     <StyledCarousel ref={ref} beforeChange={beforeChange} {...settings}>
-      <Card>안녕하세요1</Card>
+      <Card>
+        <ContentCarousel />
+      </Card>
       <Card>안녕하세요2</Card>
       <Card>안녕하세요3</Card>
       <Card>안녕하세요4</Card>
