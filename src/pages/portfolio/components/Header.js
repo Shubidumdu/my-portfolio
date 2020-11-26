@@ -7,7 +7,6 @@ const { Header: H } = Layout;
 
 const StyledHeader = styled(H)`
   background: ${({ theme }) => theme.colors.base};
-  height: 64px;
   transition: 0.3s;
 
   & > ul > li {
@@ -16,6 +15,33 @@ const StyledHeader = styled(H)`
 
   .ant-menu-horizontal {
     border-bottom: 0;
+  }
+`;
+
+const StyledMenu = styled(Menu)`
+  .ant-menu-horizontal {
+    border-bottom: 0;
+  }
+`;
+
+const StyledMenuItem = styled(Menu.Item)`
+  margin: 0 !important;
+  padding: 0 20px !important;
+  top: 0 !important;
+  font-weight: 300;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.main} !important;
+    color: ${({ theme }) => theme.colors.white} !important;
+  }
+
+  &.ant-menu-item-selected {
+    background: ${({ theme }) => theme.colors.main};
+    color: ${({ theme }) => theme.colors.white} !important;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.white} !important;
+    }
   }
 `;
 
@@ -34,7 +60,7 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <Menu
+      <StyledMenu
         selectedKeys={[slickIndex.toString()]}
         mode="horizontal"
         theme={mode}
@@ -46,12 +72,12 @@ const Header = () => {
           };
 
           return (
-            <Menu.Item onClick={onClick} key={idx}>
+            <StyledMenuItem onClick={onClick} key={idx}>
               {category}
-            </Menu.Item>
+            </StyledMenuItem>
           );
         })}
-      </Menu>
+      </StyledMenu>
     </StyledHeader>
   );
 };
