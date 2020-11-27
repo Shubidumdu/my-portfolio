@@ -8,6 +8,7 @@ const { Header: H } = Layout;
 const StyledHeader = styled(H)`
   background: ${({ theme }) => theme.colors.base};
   transition: 0.3s;
+  z-index: 1;
 
   & > ul > li {
     transition: 0.3s !important;
@@ -28,9 +29,9 @@ const StyledMenuItem = styled(Menu.Item)`
   margin: 0 !important;
   padding: 0 20px !important;
   top: 0 !important;
-  font-weight: 300;
+  font-weight: 400;
 
-  &:hover {
+  /* &:hover {
     background: ${({ theme }) => theme.colors.main} !important;
     color: ${({ theme }) => theme.colors.white} !important;
   }
@@ -42,7 +43,7 @@ const StyledMenuItem = styled(Menu.Item)`
     &:hover {
       color: ${({ theme }) => theme.colors.white} !important;
     }
-  }
+  } */
 `;
 
 const categories = [
