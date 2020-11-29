@@ -33,6 +33,7 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 export const Card = styled.div`
   width: 100%;
+  position: relative;
   border: none;
   color: ${({ theme }) =>
     theme.mode === 'dark' ? theme.colors.white : theme.colors.black};

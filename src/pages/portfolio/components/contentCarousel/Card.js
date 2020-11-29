@@ -23,10 +23,12 @@ const CardWrap = styled.div`
 `;
 
 const StyledCard = styled(C)`
+  position: relative;
   background: #fff;
   width: 100% !important;
   margin: 2rem;
   border-radius: 1rem;
+  text-align: center;
   box-shadow: 1rem 1rem 1rem
     ${({ theme }) => (theme.mode === 'light' ? theme.colors.sub : '#000')};
 
