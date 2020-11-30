@@ -7,7 +7,7 @@ import {
 } from 'react-icons/hi';
 
 const styleSettings = {
-  ghost: true,
+  // ghost: true,
   size: 'large',
   type: 'primary',
   shape: 'circle',
@@ -26,19 +26,21 @@ const ButtonWrap = styled.div`
   justify-content: space-between;
   position: absolute;
   width: 100%;
-  bottom: 2rem;
-  padding: 0 2rem;
+  bottom: 50%;
+  padding: 0 1rem;
 `;
+
+const StyledButton = styled(Button)``;
 
 const Buttons = ({ onBack, onNext }) => {
   return (
     <ButtonWrap>
-      <Button
+      <StyledButton
         icon={<LeftIcon size="40px" />}
         onClick={onBack}
         {...styleSettings}
       />
-      <Button
+      <StyledButton
         icon={<RightIcon size="40px" />}
         onClick={onNext}
         {...styleSettings}
