@@ -47,7 +47,6 @@ const Card = () => {
     <CardWrap>
       <StyledCard
         hoverable
-        style={{ width: 240 }}
         cover={
           <Image
             alt="example"

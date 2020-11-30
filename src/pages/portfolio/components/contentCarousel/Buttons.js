@@ -42,7 +42,7 @@ const Buttons = ({ onBack, onNext }) => {
         icon={<RightIcon size="40px" />}
         onClick={onNext}
         {...styleSettings}
-      ></Button>
+      />
     </ButtonWrap>
   );
 };

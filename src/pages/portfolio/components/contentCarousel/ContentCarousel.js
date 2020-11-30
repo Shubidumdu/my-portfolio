@@ -20,7 +20,7 @@ const settings = {
   draggable: false,
   swipe: false,
   swipeToSlide: false,
-  centerMode: false,
+  centerMode: true,
   slidesToShow: 3,
   slidesToScroll: 1,
   centerPadding: 0,
