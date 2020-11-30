@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card as C } from 'antd';
 import styled from 'styled-components';
+import Modal from '../Modal';
 
 const { Meta } = C;
 
 const CardWrap = styled.div`
   width: calc(100vw / 3);
-  height: calc(var(--vh, 1vh) * 100 - (64px));
+  height: calc(var(--vh, 1vh) * 100 - (70px));
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 768px) {
     width: calc(100vw / 2);
-    height: calc(var(--vh, 1vh) * 100 - (64px));
+    height: calc(var(--vh, 1vh) * 100 - (70px));
   }
 
   @media (max-width: 480px) {
     width: 100vw;
-    height: calc(var(--vh, 1vh) * 100 - (64px));
+    height: calc(var(--vh, 1vh) * 100 - (70px));
   }
 `;
 
@@ -43,9 +44,15 @@ const Image = styled.img`
 `;
 
 const Card = () => {
+  const [isOpen, setOpen] = useState(false);
+  const onClick = () => {
+    setOpen((open) => !open);
+  };
+
   return (
     <CardWrap>
       <StyledCard
+        onClick={onClick}
         hoverable
         cover={
           <Image
@@ -56,6 +63,9 @@ const Card = () => {
       >
         <Meta title="Europe Street beat" description="www.instagram.com" />
       </StyledCard>
+      <Modal visible={isOpen} onCancel={onClick}>
+        하하하
+      </Modal>
     </CardWrap>
   );
 };
