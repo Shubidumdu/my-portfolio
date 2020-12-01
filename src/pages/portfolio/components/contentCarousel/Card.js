@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Card as C } from 'antd';
 import styled from 'styled-components';
-import Modal from '../Modal';
+import Modal from '../modal/Modal';
 import { transparentize } from 'polished';
+import ModalCarousel from '../modal/ModalCarousel';
 
 const { Meta } = C;
 
@@ -89,8 +90,13 @@ const Card = () => {
           description="www.instagram.com"
         />
       </StyledCard>
-      <Modal visible={isOpen} onCancel={onClick}>
-        하하하
+      <Modal title="Europe Street beat" visible={isOpen} onCancel={onClick}>
+        <ModalCarousel>
+          <img
+            alt="example"
+            src="https://image.freepik.com/free-vector/light-blue-project-management-concept_23-2147782704.jpg"
+          />
+        </ModalCarousel>
       </Modal>
     </CardWrap>
   );

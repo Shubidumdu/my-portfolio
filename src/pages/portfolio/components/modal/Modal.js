@@ -4,12 +4,9 @@ import styled from 'styled-components';
 
 const StyledModal = styled(M)``;
 
-// const bodyStyle = {
-//   width: 'calc(100% / 3)',
-//   height: '100%',
-// };
-
-const settings = {};
+const settings = {
+  footer: null,
+};
 
 const Modal = ({ children, ...rest }) => {
   return (
