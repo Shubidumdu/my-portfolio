@@ -30,7 +30,9 @@ const ButtonWrap = styled.div`
   padding: 0 1rem;
 `;
 
-const StyledButton = styled(Button)``;
+const StyledButton = styled(Button)`
+  /* box-shadow: 1px 1px 3px ${({ theme }) => theme.colors.black}; */
+`;
 
 const Buttons = ({ onBack, onNext }) => {
   return (

@@ -4,16 +4,16 @@ const lightTheme = {
   main: '#E94231',
   sub: '#9296A1',
   base: '#E8E5E6',
-  white: '#E8E5E6',
+  white: '#fff',
   black: '#192425',
 };
 
 const darkTheme = {
   main: '#E94231',
-  sub: '#947F88',
+  sub: '#272224',
   base: '#192425',
-  white: '#E8E5E6',
-  black: '#192425',
+  white: '#fff',
+  black: '#000',
 };
 
 const initialState = {

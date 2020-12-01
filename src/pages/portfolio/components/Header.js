@@ -6,9 +6,13 @@ import styled, { useTheme } from 'styled-components';
 const { Header: H } = Layout;
 
 const StyledHeader = styled(H)`
-  background: ${({ theme }) => theme.colors.base};
+  background: ${({ theme }) =>
+    theme.mode === 'light' ? theme.colors.white : theme.colors.sub};
   transition: 0.3s;
   z-index: 1;
+  box-shadow: 0px 1px 6px
+    ${({ theme }) =>
+      theme.mode === 'light' ? theme.colors.sub : theme.colors.black};
 
   & > ul > li {
     transition: 0.3s !important;
@@ -20,6 +24,8 @@ const StyledHeader = styled(H)`
 `;
 
 const StyledMenu = styled(Menu)`
+  margin: -2px;
+
   .ant-menu-horizontal {
     border-bottom: 0;
   }
@@ -30,20 +36,6 @@ const StyledMenuItem = styled(Menu.Item)`
   padding: 0 20px !important;
   top: 0 !important;
   font-weight: 400;
-
-  /* &:hover {
-    background: ${({ theme }) => theme.colors.main} !important;
-    color: ${({ theme }) => theme.colors.white} !important;
-  }
-
-  &.ant-menu-item-selected {
-    background: ${({ theme }) => theme.colors.main};
-    color: ${({ theme }) => theme.colors.white} !important;
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.white} !important;
-    }
-  } */
 `;
 
 const categories = [

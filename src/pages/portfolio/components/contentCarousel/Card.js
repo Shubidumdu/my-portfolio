@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card as C } from 'antd';
 import styled from 'styled-components';
 import Modal from '../Modal';
+import { transparentize } from 'polished';
 
 const { Meta } = C;
 
@@ -25,17 +26,39 @@ const CardWrap = styled.div`
 
 const StyledCard = styled(C)`
   position: relative;
-  background: #fff;
+  background: ${({ theme }) =>
+    theme.mode === 'light' ? theme.colors.white : theme.colors.sub};
   width: 100% !important;
   margin: 2rem;
   border-radius: 1rem;
   text-align: center;
   box-shadow: 1rem 1rem 1rem
-    ${({ theme }) => (theme.mode === 'light' ? theme.colors.sub : '#000')};
+    ${({ theme }) =>
+      theme.mode === 'light' ? theme.colors.sub : theme.colors.black};
 
   &:hover {
     box-shadow: 0.2rem 0.2rem 0.5rem
-      ${({ theme }) => (theme.mode === 'light' ? theme.colors.sub : '#000')};
+      ${({ theme }) =>
+        theme.mode === 'light' ? theme.colors.sub : theme.colors.black};
+  }
+
+  border: 1px solid
+    ${({ theme }) => (theme.mode === 'light' ? '#fff' : theme.colors.sub)};
+  transition: 0.3s;
+`;
+
+const StyledMeta = styled(Meta)`
+  .ant-card-meta-title {
+    color: ${({ theme }) =>
+      theme.mode === 'light' ? theme.colors.black : theme.colors.white};
+  }
+
+  .ant-card-meta-description {
+    color: ${({ theme }) =>
+      transparentize(
+        0.4,
+        theme.mode === 'light' ? theme.colors.black : theme.colors.white,
+      )};
   }
 `;
 
@@ -57,11 +80,14 @@ const Card = () => {
         cover={
           <Image
             alt="example"
-            src="https://play-lh.googleusercontent.com/IeNJWoKYx1waOhfWF6TiuSiWBLfqLb18lmZYXSgsH1fvb8v1IYiZr5aYWe0Gxu-pVZX3"
+            src="https://image.freepik.com/free-vector/light-blue-project-management-concept_23-2147782704.jpg"
           />
         }
       >
-        <Meta title="Europe Street beat" description="www.instagram.com" />
+        <StyledMeta
+          title="Europe Street beat"
+          description="www.instagram.com"
+        />
       </StyledCard>
       <Modal visible={isOpen} onCancel={onClick}>
         하하하
