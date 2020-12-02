@@ -3,7 +3,6 @@ import Carousel from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.less';
 import 'slick-carousel/slick/slick-theme.less';
-import { useSlick } from './hooks';
 import { SlickContext } from '../..';
 import ContentCarousel from '../contentCarousel/ContentCarousel';
 

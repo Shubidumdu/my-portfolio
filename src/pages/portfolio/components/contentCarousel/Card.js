@@ -72,6 +72,10 @@ const Card = () => {
   const onClick = () => {
     setOpen((open) => !open);
   };
+  const images = [
+    'https://image.freepik.com/free-vector/light-blue-project-management-concept_23-2147782704.jpg',
+    'https://d2d3qesrx8xj6s.cloudfront.net/img/screenshots/b9ed772579c3f5465ad7b2f6bf62c74d1ca45d29.jpeg',
+  ];
 
   return (
     <CardWrap>
@@ -91,12 +95,7 @@ const Card = () => {
         />
       </StyledCard>
       <Modal title="Europe Street beat" visible={isOpen} onCancel={onClick}>
-        <ModalCarousel>
-          <img
-            alt="example"
-            src="https://image.freepik.com/free-vector/light-blue-project-management-concept_23-2147782704.jpg"
-          />
-        </ModalCarousel>
+        <ModalCarousel images={images} />
       </Modal>
     </CardWrap>
   );

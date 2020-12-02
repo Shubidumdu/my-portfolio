@@ -6,6 +6,9 @@ const StyledModal = styled(M)``;
 
 const settings = {
   footer: null,
+  bodyStyle: {
+    padding: 0,
+  },
 };
 
 const Modal = ({ children, ...rest }) => {
