@@ -1,20 +1,31 @@
+import { Button } from 'antd';
 import React, { useRef, useState } from 'react';
 import Carousel from 'react-slick';
 import styled from 'styled-components';
 
-const DotButton = styled.button``;
+const DotButton = styled(Button)`
+  background: ${({ theme }) => theme.colors.main};
+  transition: 0.3s;
+`;
 
-const Dots = styled.div``;
+const Dots = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const Dot = ({ onClick, active, children }) => {
   return (
-    <DotButton active={active} onClick={onClick}>
+    <DotButton shape="circle" active={active} onClick={onClick}>
       {children}
     </DotButton>
   );
 };
 
-const CarouselWrap = styled.div``;
+const CarouselWrap = styled.div`
+  .slick-list {
+    transition: 0.3s;
+  }
+`;
 
 const settings = {
   adaptiveHeight: true,

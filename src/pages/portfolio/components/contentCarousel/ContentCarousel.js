@@ -7,9 +7,8 @@ import 'slick-carousel/slick/slick-theme.less';
 import Buttons from './Buttons';
 
 const StyledCarousel = styled(Carousel)`
-  .slick-slide {
-    border: none;
-    outline: none;
+  .slick-list {
+    transition: 0.3s;
   }
 `;
 
