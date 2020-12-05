@@ -3,28 +3,31 @@ import React, { useRef, useState } from 'react';
 import Carousel from 'react-slick';
 import styled from 'styled-components';
 
-const DotButton = styled(Button)`
-  background: ${({ theme }) => theme.colors.main};
-  transition: 0.3s;
+const CarouselWrap = styled.div`
+  .slick-list {
+    transition: 0.3s;
+  }
+
+  & ul {
+    list-style-type: none;
+    display: flex !important;
+    justify-content: center;
+    padding: 0;
+  }
+`;
+
+const PageButton = styled(Button)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
 `;
 
 const Dots = styled.div`
   display: flex;
   justify-content: center;
-`;
-
-const Dot = ({ onClick, active, children }) => {
-  return (
-    <DotButton shape="circle" active={active} onClick={onClick}>
-      {children}
-    </DotButton>
-  );
-};
-
-const CarouselWrap = styled.div`
-  .slick-list {
-    transition: 0.3s;
-  }
+  align-items: center;
+  margin: 2px;
 `;
 
 const settings = {
@@ -34,7 +37,41 @@ const settings = {
   // swipe: false,
   // swipeToSlide: false,
   arrows: false,
-  dots: false,
+  dots: true,
+  dotsClass: 'dot-buttons',
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  appendDots: (origin) => {
+    const dots = origin.map(
+      ({
+        props: {
+          className,
+          children: {
+            props: { onClick },
+          },
+        },
+      }) => ({
+        className,
+        onClick,
+      }),
+    );
+
+    return (
+      <Dots>
+        {dots.map(({ className, onClick }, index) => (
+          <PageButton
+            size="small"
+            type="primary"
+            key={index}
+            className={className}
+            onClick={onClick}
+          >
+            {index + 1}
+          </PageButton>
+        ))}
+      </Dots>
+    );
+  },
 };
 
 const ModalCarousel = ({ images }) => {
@@ -51,19 +88,7 @@ const ModalCarousel = ({ images }) => {
           <img alt={image} key={idx} src={image} />
         ))}
       </Carousel>
-      <Dots>
-        {images.map((image, idx) => {
-          const onClick = (e) => {
-            e.preventDefault();
-            slider.current.slickGoTo(idx);
-          };
-          return (
-            <Dot key={idx} active={idx === index} onClick={onClick}>
-              {idx}
-            </Dot>
-          );
-        })}
-      </Dots>
+      하하하하
     </CarouselWrap>
   );
 };
