@@ -42,7 +42,6 @@ export const Card = styled.div`
   background: ${({ theme }) => theme.colors.base};
   transition: 0.3s;
   cursor: grab;
-
   &:active {
     cursor: grabbing;
   }
@@ -58,6 +57,7 @@ const VerticalCarousel = () => {
         draggable: false,
         verticalSwiping: false,
         swipeToSlide: false,
+        touchMove: false,
       }
     : {};
 

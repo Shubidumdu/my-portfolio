@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Layout, Menu } from 'antd';
-import { SlickContext } from '..';
+import { SlickContext } from '../..';
 import styled, { useTheme } from 'styled-components';
 
 const { Header: H } = Layout;

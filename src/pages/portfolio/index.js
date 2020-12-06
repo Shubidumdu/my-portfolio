@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import { Layout as L } from 'antd';
-import Header from './components/Header';
-import Content from './components/Content';
+import Header from './components/layout/Header';
+import Content from './components/layout/Content';
 import { useSlick } from './components/verticalCarousel/hooks';
 import ThemeSwitch from './components/ThemeSwitch';
 import styled from 'styled-components';

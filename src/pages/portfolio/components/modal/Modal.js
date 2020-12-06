@@ -16,6 +16,7 @@ const settings = {
 
 const Modal = ({ children, visible, ...rest }) => {
   const { setStuck } = useContext(SlickContext);
+
   useEffect(() => {
     setStuck(visible);
   }, [visible]);
