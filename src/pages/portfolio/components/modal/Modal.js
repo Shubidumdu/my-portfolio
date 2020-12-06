@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Modal as M } from 'antd';
 import styled from 'styled-components';
+import { SlickContext } from '../..';
 
 const StyledModal = styled(M)``;
 
@@ -9,11 +10,18 @@ const settings = {
   bodyStyle: {
     padding: 0,
   },
+  maskClosable: false,
+  destroyOnClose: true,
 };
 
-const Modal = ({ children, ...rest }) => {
+const Modal = ({ children, visible, ...rest }) => {
+  const { setStuck } = useContext(SlickContext);
+  useEffect(() => {
+    setStuck(visible);
+  }, [visible]);
+
   return (
-    <StyledModal {...settings} {...rest}>
+    <StyledModal visible={visible} {...settings} {...rest}>
       {children}
     </StyledModal>
   );

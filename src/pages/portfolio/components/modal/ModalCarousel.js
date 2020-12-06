@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import Carousel from 'react-slick';
 import styled from 'styled-components';
 
@@ -21,6 +21,7 @@ const PageButton = styled(Button)`
   justify-content: center;
   align-items: center;
   margin: 2px;
+  transition: 0.3s;
 `;
 
 const Dots = styled.div`
@@ -32,10 +33,6 @@ const Dots = styled.div`
 
 const settings = {
   adaptiveHeight: true,
-  // draggable: false,
-  // touchMove: false,
-  // swipe: false,
-  // swipeToSlide: false,
   arrows: false,
   dots: true,
   dotsClass: 'dot-buttons',
@@ -61,7 +58,7 @@ const settings = {
         {dots.map(({ className, onClick }, index) => (
           <PageButton
             size="small"
-            type="primary"
+            type={className === 'slick-active' ? 'primary' : 'default'}
             key={index}
             className={className}
             onClick={onClick}
@@ -75,20 +72,17 @@ const settings = {
 };
 
 const ModalCarousel = ({ images }) => {
-  const [index, setIndex] = useState(0);
   const slider = useRef();
-  const beforeChange = (_, idx) => {
-    setIndex(idx);
-  };
 
   return (
     <CarouselWrap>
-      <Carousel beforeChange={beforeChange} ref={slider} {...settings}>
+      <Carousel ref={slider} {...settings}>
         {images.map((image, idx) => (
           <img alt={image} key={idx} src={image} />
         ))}
       </Carousel>
       하하하하
+      <br />
     </CarouselWrap>
   );
 };

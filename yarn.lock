@@ -6117,11 +6117,6 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-magic-slider-dots@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/react-magic-slider-dots/-/react-magic-slider-dots-1.2.2.tgz#9e37b424ca0058374dc97b56e4064da48a5244da"
-  integrity sha512-I2ZhKcQLJ4QG11AyJwRhKprl4lWa1I1FkJzvMDr26dypqIoe4WwqH/stWyROetgqw5jqslb1ocePp8STfQ0tPQ==
-
 react-slick@^0.27.13:
   version "0.27.13"
   resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.27.13.tgz#1fdb60f56b1a08ffbafaa2251924845f1e192230"

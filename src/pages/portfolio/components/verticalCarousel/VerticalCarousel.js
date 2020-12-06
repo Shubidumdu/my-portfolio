@@ -49,13 +49,25 @@ export const Card = styled.div`
 `;
 
 const VerticalCarousel = () => {
-  const { ref, setIndex } = useContext(SlickContext);
+  const { ref, setIndex, isStuck } = useContext(SlickContext);
   const beforeChange = (_, idx) => {
     setIndex(idx);
   };
+  const stuckSettings = isStuck
+    ? {
+        draggable: false,
+        verticalSwiping: false,
+        swipeToSlide: false,
+      }
+    : {};
 
   return (
-    <StyledCarousel ref={ref} beforeChange={beforeChange} {...settings}>
+    <StyledCarousel
+      ref={ref}
+      beforeChange={beforeChange}
+      {...settings}
+      {...stuckSettings}
+    >
       <Card>
         <ContentCarousel />
       </Card>
