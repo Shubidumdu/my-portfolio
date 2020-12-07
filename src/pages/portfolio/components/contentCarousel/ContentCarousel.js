@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
 import Carousel from 'react-slick';
 import styled from 'styled-components';
-import Card from './Card';
 import 'slick-carousel/slick/slick.less';
 import 'slick-carousel/slick/slick-theme.less';
-import Buttons from './Buttons';
+import CarouselButtons from './CarouselButtons';
 
 const StyledCarousel = styled(Carousel)`
   .slick-list {
@@ -46,7 +45,7 @@ const settings = {
   ],
 };
 
-const ContentCarousel = () => {
+const ContentCarousel = ({ children }) => {
   const slick = useRef();
   const onBack = () => {
     slick.current.slickPrev();
@@ -58,13 +57,9 @@ const ContentCarousel = () => {
   return (
     <>
       <StyledCarousel ref={slick} {...settings}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {children}
       </StyledCarousel>
-      <Buttons onBack={onBack} onNext={onNext} />
+      <CarouselButtons onBack={onBack} onNext={onNext} />
     </>
   );
 };

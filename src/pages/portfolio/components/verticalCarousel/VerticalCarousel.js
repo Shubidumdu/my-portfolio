@@ -47,7 +47,7 @@ export const Card = styled.div`
   }
 `;
 
-const VerticalCarousel = () => {
+const VerticalCarousel = ({ children }) => {
   const { ref, setIndex, isStuck } = useContext(SlickContext);
   const beforeChange = (_, idx) => {
     setIndex(idx);
@@ -68,14 +68,7 @@ const VerticalCarousel = () => {
       {...settings}
       {...stuckSettings}
     >
-      <Card>
-        <ContentCarousel />
-      </Card>
-      <Card>안녕하세요2</Card>
-      <Card>안녕하세요3</Card>
-      <Card>안녕하세요4</Card>
-      <Card>안녕하세요5</Card>
-      <Card>안녕하세요6</Card>
+      {children}
     </StyledCarousel>
   );
 };

@@ -5,6 +5,7 @@ import Content from './Content';
 
 describe(`Content Component`, () => {
   test(`should renders properly`, () => {
-    render(<Content />);
+    render(<Content>Test</Content>);
+    screen.getByText('Test');
   });
 });

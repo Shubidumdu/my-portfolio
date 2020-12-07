@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {
   HiArrowLeft as LeftIcon,
@@ -31,12 +31,12 @@ const ButtonWrap = styled.div`
 
 const StyledButton = styled(Button)``;
 
-const Buttons = ({ onBack, onNext }) => {
+const CarouselButtons = ({ onPrev, onNext }) => {
   return (
     <ButtonWrap>
       <StyledButton
         icon={<LeftIcon size="40px" />}
-        onClick={onBack}
+        onClick={onPrev}
         {...styleSettings}
       />
       <StyledButton
@@ -48,4 +48,4 @@ const Buttons = ({ onBack, onNext }) => {
   );
 };
 
-export default Buttons;
+export default CarouselButtons;

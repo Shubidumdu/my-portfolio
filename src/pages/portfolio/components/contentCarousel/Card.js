@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card as C } from 'antd';
 import styled from 'styled-components';
-import Modal from '../modal/Modal';
 import { transparentize } from 'polished';
-import ModalCarousel from '../modal/ModalCarousel';
 
 const { Meta } = C;
 
@@ -67,36 +65,16 @@ const Image = styled.img`
   border-radius: 1rem 1rem 0 0 !important;
 `;
 
-const Card = () => {
-  const [isOpen, setOpen] = useState(false);
-  const onClick = () => {
-    setOpen((open) => !open);
-  };
-  const images = [
-    'https://image.freepik.com/free-vector/light-blue-project-management-concept_23-2147782704.jpg',
-    'https://d2d3qesrx8xj6s.cloudfront.net/img/screenshots/b9ed772579c3f5465ad7b2f6bf62c74d1ca45d29.jpeg',
-  ];
-
+const Card = ({ onClick, image, title, desc }) => {
   return (
     <CardWrap>
       <StyledCard
         onClick={onClick}
         hoverable
-        cover={
-          <Image
-            alt="example"
-            src="https://image.freepik.com/free-vector/light-blue-project-management-concept_23-2147782704.jpg"
-          />
-        }
+        cover={<Image alt={title} src={image} />}
       >
-        <StyledMeta
-          title="Europe Street beat"
-          description="www.instagram.com"
-        />
+        <StyledMeta title={title} description={desc} />
       </StyledCard>
-      <Modal title="Europe Street beat" visible={isOpen} onCancel={onClick}>
-        <ModalCarousel images={images} />
-      </Modal>
     </CardWrap>
   );
 };

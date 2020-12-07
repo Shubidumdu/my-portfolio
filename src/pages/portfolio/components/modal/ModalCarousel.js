@@ -81,8 +81,6 @@ const ModalCarousel = ({ images }) => {
           <img alt={image} key={idx} src={image} />
         ))}
       </Carousel>
-      하하하하
-      <br />
     </CarouselWrap>
   );
 };

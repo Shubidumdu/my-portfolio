@@ -1,15 +1,10 @@
 import React from 'react';
 import { Layout } from 'antd';
-import VerticalCarousel from '../verticalCarousel/VerticalCarousel';
 
 const { Content: C } = Layout;
 
-const Content = () => {
-  return (
-    <C>
-      <VerticalCarousel></VerticalCarousel>
-    </C>
-  );
+const Content = ({ children }) => {
+  return <C>{children}</C>;
 };
 
 export default Content;
