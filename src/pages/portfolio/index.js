@@ -20,6 +20,7 @@ const Portfolio = () => {
         <Content>
           <VerticalCarousel>
             <Profile />
+            <Profile />
           </VerticalCarousel>
         </Content>
         <ThemeSwitch />
