@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Carousel from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.less';
 import 'slick-carousel/slick/slick-theme.less';
-import { SlickContext } from '../..';
-import ContentCarousel from '../contentCarousel/ContentCarousel';
+import { useVerticalSlickContext } from '../../SlickProvider';
 
 const settings = {
   dots: false,
@@ -48,7 +47,7 @@ export const Card = styled.div`
 `;
 
 const VerticalCarousel = ({ children }) => {
-  const { ref, setIndex, isStuck } = useContext(SlickContext);
+  const { ref, setIndex, isStuck } = useVerticalSlickContext();
   const beforeChange = (_, idx) => {
     setIndex(idx);
   };

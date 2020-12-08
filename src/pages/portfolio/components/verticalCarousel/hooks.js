@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 
-export const useSlick = () => {
+export const useVerticalSlick = () => {
   const slick = useRef(null);
   const [idx, setIdx] = useState(0);
   const [isStuck, setStuck] = useState(false);

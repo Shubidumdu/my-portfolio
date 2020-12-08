@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Layout, Menu } from 'antd';
-import { SlickContext } from '../..';
 import styled, { useTheme } from 'styled-components';
+import { useVerticalSlickContext } from '../../SlickProvider';
 
 const { Header: H } = Layout;
 
@@ -48,7 +48,7 @@ const categories = [
 ];
 
 const Header = () => {
-  const { index: slickIndex, ref: slick } = useContext(SlickContext);
+  const { index: slickIndex, ref: slick } = useVerticalSlickContext();
   const { mode } = useTheme();
 
   return (

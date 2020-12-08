@@ -1,28 +1,30 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import { Layout as L } from 'antd';
 import Header from './components/layout/Header';
 import Content from './components/layout/Content';
-import { useSlick } from './components/verticalCarousel/hooks';
 import ThemeSwitch from './components/ThemeSwitch';
 import styled from 'styled-components';
+import SlickProvider from './SlickProvider';
+import VerticalCarousel from './components/verticalCarousel/VerticalCarousel';
+import Profile from './components/verticalCarousel/pages/Profile';
 
 const StyledLayout = styled(L)`
   background: ${({ theme }) => theme.colors.base};
 `;
 
-export const SlickContext = createContext(null);
-
 const Portfolio = () => {
-  const slick = useSlick();
-
   return (
-    <SlickContext.Provider value={slick}>
+    <SlickProvider>
       <StyledLayout>
         <Header />
-        <Content />
+        <Content>
+          <VerticalCarousel>
+            <Profile />
+          </VerticalCarousel>
+        </Content>
         <ThemeSwitch />
       </StyledLayout>
-    </SlickContext.Provider>
+    </SlickProvider>
   );
 };
 
