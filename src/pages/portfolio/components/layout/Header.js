@@ -21,13 +21,23 @@ const StyledHeader = styled(H)`
   .ant-menu-horizontal {
     border-bottom: 0;
   }
+
+  @media (max-width: 425px) {
+    padding: 0;
+  }
 `;
 
 const StyledMenu = styled(Menu)`
   margin: -2px;
+  text-align: center;
 
   .ant-menu-horizontal {
     border-bottom: 0;
+  }
+
+  @media (max-width: 425px) {
+    text-align: left;
+    width: 1rem;
   }
 `;
 
@@ -57,7 +67,6 @@ const Header = () => {
         selectedKeys={[slickIndex.toString()]}
         mode="horizontal"
         theme={mode}
-        style={{ textAlign: 'center' }}
       >
         {categories.map((category, idx) => {
           const onClick = () => {
