@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Card } from '../VerticalCarousel';
-import mainImg from '../../../resources/images/profile.png';
+import mainImg from '../../../resources/images/profile5.png';
 
-const MainImg = styled.img`
-  height: 75%;
+const ImgWrap = styled.div`
+  height: 70%;
   width: auto;
   display: block;
-  position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -17,6 +16,17 @@ const MainImg = styled.img`
   @media (max-width: 425px) {
     width: 100%;
     height: auto;
+  }
+`;
+
+const MainImg = styled.img`
+  /* width: 100%; */
+  height: 100%;
+  width: auto;
+
+  @media (max-width: 425px) {
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -54,9 +64,8 @@ const IntroWrap = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding-top: 2rem;
 `;
 
 const MediumTitle = styled.div`
@@ -88,7 +97,9 @@ const Profile = () => {
               개성과 발전을 중요시하는 개발자 서원교입니다
             </MediumTitle>
           </IntroWrap>
-          <MainImg src={mainImg} />
+          <ImgWrap>
+            <MainImg src={mainImg} />
+          </ImgWrap>
         </Container>
       </Inner>
     </Card>
