@@ -14,7 +14,7 @@ const ImgWrap = styled.div`
   bottom: 0;
 
   @media (max-width: 425px) {
-    width: 100%;
+    width: 85%;
     height: auto;
   }
 `;
