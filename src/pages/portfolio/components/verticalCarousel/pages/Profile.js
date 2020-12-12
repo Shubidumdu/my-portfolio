@@ -13,7 +13,7 @@ const ImgWrap = styled.div`
   right: 0;
   bottom: 0;
 
-  @media (max-width: 425px) {
+  @media (max-width: 550px) {
     width: 85%;
     height: auto;
   }
@@ -24,7 +24,7 @@ const MainImg = styled.img`
   height: 100%;
   width: auto;
 
-  @media (max-width: 425px) {
+  @media (max-width: 550px) {
     width: 100%;
     height: 100%;
   }
@@ -35,7 +35,7 @@ const Inner = styled.div`
   height: 100%;
   padding: 4rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: 500px) {
     padding: 0;
   }
 `;
@@ -53,7 +53,7 @@ const Container = styled.div`
       theme.mode === 'light' ? theme.colors.sub : theme.colors.black};
   flex-direction: column;
 
-  @media (max-width: 425px) {
+  @media (max-width: 500px) {
     border-radius: 0;
     box-shadow: none;
   }

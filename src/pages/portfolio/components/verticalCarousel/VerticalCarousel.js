@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import 'slick-carousel/slick/slick.less';
 import 'slick-carousel/slick/slick-theme.less';
 import { useVerticalSlickContext } from '../../SlickProvider';
+import { HiChevronDown, HiChevronUp } from 'react-icons/hi';
 
 const settings = {
   dots: false,
@@ -46,6 +47,28 @@ export const Card = styled.div`
   }
 `;
 
+const CarouselWrap = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
+const UpArrow = styled.div`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: ${({ theme }) => theme.colors.main};
+`;
+
+const DownArrow = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: ${({ theme }) => theme.colors.main};
+`;
+
 const VerticalCarousel = ({ children }) => {
   const { ref, setIndex, isStuck } = useVerticalSlickContext();
   const beforeChange = (_, idx) => {
@@ -61,14 +84,22 @@ const VerticalCarousel = ({ children }) => {
     : {};
 
   return (
-    <StyledCarousel
-      ref={ref}
-      beforeChange={beforeChange}
-      {...settings}
-      {...stuckSettings}
-    >
-      {children}
-    </StyledCarousel>
+    <CarouselWrap>
+      <StyledCarousel
+        ref={ref}
+        beforeChange={beforeChange}
+        {...settings}
+        {...stuckSettings}
+      >
+        {children}
+      </StyledCarousel>
+      <UpArrow>
+        <HiChevronUp size="2rem" />
+      </UpArrow>
+      <DownArrow>
+        <HiChevronDown size="2rem" />
+      </DownArrow>
+    </CarouselWrap>
   );
 };
 

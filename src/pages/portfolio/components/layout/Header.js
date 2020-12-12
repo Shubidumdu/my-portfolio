@@ -1,7 +1,8 @@
-import React from 'react';
-import { Layout, Menu } from 'antd';
+import React, { useState } from 'react';
+import { Button, Drawer, Layout, Menu } from 'antd';
 import styled, { useTheme } from 'styled-components';
 import { useVerticalSlickContext } from '../../SlickProvider';
+import { HiMenu } from 'react-icons/hi';
 
 const { Header: H } = Layout;
 
@@ -22,7 +23,7 @@ const StyledHeader = styled(H)`
     border-bottom: 0;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 700px) {
     padding: 0;
   }
 `;
@@ -35,9 +36,8 @@ const StyledMenu = styled(Menu)`
     border-bottom: 0;
   }
 
-  @media (max-width: 425px) {
-    text-align: left;
-    width: 1rem;
+  @media (max-width: 700px) {
+    display: none;
   }
 `;
 
@@ -57,9 +57,60 @@ const categories = [
   'CONTACT',
 ];
 
+const MobileHeaderWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+`;
+
+const PageTitle = styled.div`
+  & > span {
+    padding-bottom: 1px;
+    font-size: 1rem;
+  }
+`;
+
+const DrawerButton = styled(Button)`
+  padding: 1rem;
+  width: 66px;
+  height: 66px;
+`;
+
+const DrawerMenu = styled(Menu)``;
+
+const DrawerMenuItem = styled(Menu.Item)`
+  margin: 0 !important;
+  height: 66px !important;
+  font-size: 1rem;
+  display: flex !important;
+  align-items: center !important;
+`;
+
+const EmptyDiv = styled.div`
+  width: 66px;
+  height: 66px;
+`;
+
+const drawerSettings = {
+  bodyStyle: {
+    padding: '0',
+  },
+  height: 'auto',
+  placement: 'top',
+  closable: false,
+};
+
 const Header = () => {
   const { index: slickIndex, ref: slick } = useVerticalSlickContext();
   const { mode } = useTheme();
+  const [openDrawer, setDrawer] = useState(false);
+  const toggleDrawer = (e) => {
+    setDrawer((isOpen) => !isOpen);
+  };
 
   return (
     <StyledHeader>
@@ -80,6 +131,35 @@ const Header = () => {
           );
         })}
       </StyledMenu>
+      <MobileHeaderWrap>
+        <DrawerButton size="large" onClick={toggleDrawer} type="link">
+          <HiMenu size="100%" />
+        </DrawerButton>
+        <PageTitle>
+          <span>{categories[slickIndex]}</span>
+        </PageTitle>
+        <EmptyDiv />
+      </MobileHeaderWrap>
+      <Drawer visible={openDrawer} onClose={toggleDrawer} {...drawerSettings}>
+        <DrawerMenu
+          selectedKeys={[slickIndex.toString()]}
+          mode="vertical"
+          theme={mode}
+        >
+          {categories.map((category, idx) => {
+            const onClick = () => {
+              slick.current.slickGoTo(idx);
+              toggleDrawer();
+            };
+
+            return (
+              <DrawerMenuItem onClick={onClick} key={idx}>
+                {category}
+              </DrawerMenuItem>
+            );
+          })}
+        </DrawerMenu>
+      </Drawer>
     </StyledHeader>
   );
 };
