@@ -16,19 +16,26 @@ const darkTheme = {
   black: '#000',
 };
 
+const mode = localStorage.getItem('theme') || 'light';
+
 const initialState = {
-  mode: 'light',
-  colors: lightTheme,
+  mode,
+  colors: mode === 'light' ? lightTheme : darkTheme,
 };
 
 export const useTheme = () => {
   const [theme, setTheme] = useState(initialState);
   const toggleTheme = () => {
-    setTheme((theme) => ({
-      ...theme,
-      mode: theme.mode === 'light' ? 'dark' : 'light',
-      colors: theme.mode === 'light' ? darkTheme : lightTheme,
-    }));
+    setTheme((theme) => {
+      const mode = theme.mode === 'light' ? 'dark' : 'light';
+      const colors = theme.mode === 'light' ? darkTheme : lightTheme;
+      localStorage.setItem('theme', mode);
+      return {
+        ...theme,
+        mode,
+        colors,
+      };
+    });
   };
 
   return { theme, toggleTheme };

@@ -15,10 +15,18 @@ const settings = {
   checkedChildren: 'Dark',
 };
 
+const mode = localStorage.getItem('theme');
+
 const ThemeSwitch = () => {
   const toggleTheme = useContext(ToggleThemeContext);
 
-  return <StyledSwitch onChange={toggleTheme} {...settings} />;
+  return (
+    <StyledSwitch
+      defaultChecked={mode === 'dark'}
+      onChange={toggleTheme}
+      {...settings}
+    />
+  );
 };
 
 export default ThemeSwitch;
