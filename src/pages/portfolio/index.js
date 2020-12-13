@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import SlickProvider from './SlickProvider';
 import VerticalCarousel from './components/verticalCarousel/VerticalCarousel';
 import Profile from './components/verticalCarousel/pages/Profile';
+import Home from './components/verticalCarousel/pages/Home';
 
 const StyledLayout = styled(L)`
   background: ${({ theme }) => theme.colors.base};
@@ -19,7 +20,7 @@ const Portfolio = () => {
         <Header />
         <Content>
           <VerticalCarousel>
-            <Profile />
+            <Home />
             <Profile />
           </VerticalCarousel>
         </Content>

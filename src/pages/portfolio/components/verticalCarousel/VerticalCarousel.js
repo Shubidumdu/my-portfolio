@@ -48,6 +48,16 @@ export const Card = styled.div`
   }
 `;
 
+export const Inner = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 4rem;
+
+  @media (max-width: 550px) {
+    padding: 0;
+  }
+`;
+
 const CarouselWrap = styled.div`
   position: relative;
   width: 100%;
