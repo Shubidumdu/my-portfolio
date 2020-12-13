@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.less';
 import 'slick-carousel/slick/slick-theme.less';
 import { useVerticalSlickContext } from '../../SlickProvider';
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi';
+import { Button } from 'antd';
 
 const settings = {
   dots: false,
@@ -55,22 +56,30 @@ const CarouselWrap = styled.div`
 
 const UpArrow = styled.div`
   position: absolute;
-  top: 0;
+  top: 1rem;
   left: 50%;
   transform: translateX(-50%);
   color: ${({ theme }) => theme.colors.main};
+
+  @media (max-width: 700px) {
+    top: 0;
+  }
 `;
 
 const DownArrow = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   color: ${({ theme }) => theme.colors.main};
+
+  @media (max-width: 700px) {
+    bottom: 0;
+  }
 `;
 
 const VerticalCarousel = ({ children }) => {
-  const { ref, setIndex, isStuck } = useVerticalSlickContext();
+  const { ref: slick, index, setIndex, isStuck } = useVerticalSlickContext();
   const beforeChange = (_, idx) => {
     setIndex(idx);
   };
@@ -83,22 +92,38 @@ const VerticalCarousel = ({ children }) => {
       }
     : {};
 
+  const onPrev = () => {
+    slick.current.slickPrev();
+  };
+
+  const onNext = () => {
+    slick.current.slickNext();
+  };
+
   return (
     <CarouselWrap>
       <StyledCarousel
-        ref={ref}
+        ref={slick}
         beforeChange={beforeChange}
         {...settings}
         {...stuckSettings}
       >
         {children}
       </StyledCarousel>
-      <UpArrow>
-        <HiChevronUp size="2rem" />
-      </UpArrow>
-      <DownArrow>
-        <HiChevronDown size="2rem" />
-      </DownArrow>
+      {index !== 0 ? (
+        <UpArrow>
+          <Button onClick={onPrev} type="link">
+            <HiChevronUp size="2rem" />
+          </Button>
+        </UpArrow>
+      ) : null}
+      {index !== 5 ? (
+        <DownArrow>
+          <Button onClick={onNext} type="link">
+            <HiChevronDown size="2rem" />
+          </Button>
+        </DownArrow>
+      ) : null}
     </CarouselWrap>
   );
 };

@@ -7,6 +7,8 @@ import { HiMenu } from 'react-icons/hi';
 const { Header: H } = Layout;
 
 const StyledHeader = styled(H)`
+  color: ${({ theme }) =>
+    theme.mode === 'light' ? theme.colors.black : theme.colors.white};
   background: ${({ theme }) =>
     theme.mode === 'light' ? theme.colors.white : theme.colors.sub};
   transition: 0.3s;
@@ -48,15 +50,6 @@ const StyledMenuItem = styled(Menu.Item)`
   font-weight: 400;
 `;
 
-const categories = [
-  'HOME',
-  'PROFILE',
-  'ACTIVITIES',
-  'CAREERS',
-  'PROJECTS',
-  'CONTACT',
-];
-
 const MobileHeaderWrap = styled.div`
   display: flex;
   justify-content: space-between;
@@ -94,6 +87,15 @@ const EmptyDiv = styled.div`
   width: 66px;
   height: 66px;
 `;
+
+const categories = [
+  'HOME',
+  'PROFILE',
+  'ACTIVITIES',
+  'CAREERS',
+  'PROJECTS',
+  'CONTACT',
+];
 
 const drawerSettings = {
   bodyStyle: {
