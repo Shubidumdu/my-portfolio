@@ -47,7 +47,7 @@ const settings = {
 
 const ContentCarousel = ({ children }) => {
   const slick = useRef();
-  const onBack = () => {
+  const onPrev = () => {
     slick.current.slickPrev();
   };
   const onNext = () => {
@@ -59,7 +59,7 @@ const ContentCarousel = ({ children }) => {
       <StyledCarousel ref={slick} {...settings}>
         {children}
       </StyledCarousel>
-      <CarouselButtons onBack={onBack} onNext={onNext} />
+      <CarouselButtons onPrev={onPrev} onNext={onNext} />
     </>
   );
 };

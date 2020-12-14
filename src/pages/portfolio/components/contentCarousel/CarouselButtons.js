@@ -24,12 +24,15 @@ const ButtonWrap = styled.div`
   display: flex;
   justify-content: space-between;
   position: absolute;
+  pointer-events: none;
   width: 100%;
   bottom: 50%;
   padding: 0 1rem;
 `;
 
-const StyledButton = styled(Button)``;
+const StyledButton = styled(Button)`
+  pointer-events: visible;
+`;
 
 const CarouselButtons = ({ onPrev, onNext }) => {
   return (
