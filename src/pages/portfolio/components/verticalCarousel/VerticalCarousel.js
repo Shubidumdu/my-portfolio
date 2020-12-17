@@ -66,7 +66,7 @@ const CarouselWrap = styled.div`
 
 const UpArrow = styled.div`
   position: absolute;
-  top: 1rem;
+  top: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
   color: ${({ theme }) => theme.colors.main};
@@ -78,7 +78,7 @@ const UpArrow = styled.div`
 
 const DownArrow = styled.div`
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.5rem;
   left: 50%;
   transform: translateX(-50%);
   color: ${({ theme }) => theme.colors.main};

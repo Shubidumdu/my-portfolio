@@ -44,6 +44,10 @@ const StyledCard = styled(C)`
   border: 1px solid
     ${({ theme }) => (theme.mode === 'light' ? '#fff' : theme.colors.sub)};
   transition: 0.3s;
+
+  > .ant-card-body {
+    position: relative;
+  }
 `;
 
 const StyledMeta = styled(Meta)`
@@ -61,11 +65,18 @@ const StyledMeta = styled(Meta)`
   }
 `;
 
+const Title = styled.div``;
+
+const Period = styled.div`
+  font-size: 0.7rem;
+  color: ${({ theme }) => theme.colors.main};
+`;
+
 const Image = styled.img`
   border-radius: 1rem 1rem 0 0 !important;
 `;
 
-const Card = ({ onClick, image, title, desc }) => {
+const Card = ({ onClick, image, title, desc, period }) => {
   return (
     <CardWrap>
       <StyledCard
@@ -73,7 +84,14 @@ const Card = ({ onClick, image, title, desc }) => {
         hoverable
         cover={<Image alt={title} src={image} />}
       >
-        <StyledMeta title={title} description={desc} />
+        <StyledMeta
+          title={
+            <Title>
+              {title} <Period>{period}</Period>
+            </Title>
+          }
+          description={desc}
+        />
       </StyledCard>
     </CardWrap>
   );

@@ -45,7 +45,7 @@ const settings = {
   ],
 };
 
-const ContentCarousel = ({ children }) => {
+const ContentCarousel = ({ children, noArrow = false }) => {
   const slick = useRef();
   const onPrev = () => {
     slick.current.slickPrev();
@@ -59,7 +59,7 @@ const ContentCarousel = ({ children }) => {
       <StyledCarousel ref={slick} {...settings}>
         {children}
       </StyledCarousel>
-      <CarouselButtons onPrev={onPrev} onNext={onNext} />
+      {noArrow ? null : <CarouselButtons onPrev={onPrev} onNext={onNext} />}
     </>
   );
 };
