@@ -11,6 +11,13 @@ const StyledCarousel = styled(Carousel)`
   }
 `;
 
+const ArrowWrap = styled.div`
+  display: ${({ noArrow }) => (noArrow ? 'none' : 'block')};
+  @media (max-width: 480px) {
+    display: block;
+  }
+`;
+
 const settings = {
   dots: false,
   arrows: false,
@@ -59,7 +66,9 @@ const ContentCarousel = ({ children, noArrow = false }) => {
       <StyledCarousel ref={slick} {...settings}>
         {children}
       </StyledCarousel>
-      {noArrow ? null : <CarouselButtons onPrev={onPrev} onNext={onNext} />}
+      <ArrowWrap noArrow={noArrow}>
+        <CarouselButtons onPrev={onPrev} onNext={onNext} />
+      </ArrowWrap>
     </>
   );
 };

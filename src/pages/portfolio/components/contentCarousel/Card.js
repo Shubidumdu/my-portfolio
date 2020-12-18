@@ -67,7 +67,7 @@ const StyledMeta = styled(Meta)`
 
 const Title = styled.div``;
 
-const Period = styled.div`
+const Sub = styled.div`
   font-size: 0.7rem;
   color: ${({ theme }) => theme.colors.main};
 `;
@@ -76,7 +76,7 @@ const Image = styled.img`
   border-radius: 1rem 1rem 0 0 !important;
 `;
 
-const Card = ({ onClick, image, title, desc, period }) => {
+const Card = ({ onClick, image, title, desc, sub }) => {
   return (
     <CardWrap>
       <StyledCard
@@ -87,7 +87,7 @@ const Card = ({ onClick, image, title, desc, period }) => {
         <StyledMeta
           title={
             <Title>
-              {title} <Period>{period}</Period>
+              {title} <Sub>{sub}</Sub>
             </Title>
           }
           description={desc}

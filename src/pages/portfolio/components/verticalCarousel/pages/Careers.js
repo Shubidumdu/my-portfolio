@@ -8,13 +8,13 @@ const cards = [
     title: '애드캡슐소프트',
     desc: '웹 퍼블리싱 인턴',
     image: 'adcapsule.png',
-    period: '2018.06 ~ 2018.08',
+    sub: '2018.06 ~ 2018.08',
   },
   {
     title: '더몽',
     desc: '풀스택 개발',
     image: 'themong.png',
-    period: '2020.05 ~ ',
+    sub: '2020.05 ~ ',
   },
 ];
 
