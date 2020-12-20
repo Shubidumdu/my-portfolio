@@ -11,6 +11,7 @@ import Home from './components/verticalCarousel/pages/Home';
 import Activities from './components/verticalCarousel/pages/Activities';
 import Careers from './components/verticalCarousel/pages/Careers';
 import Projects from './components/verticalCarousel/pages/Projects';
+import Contact from './components/verticalCarousel/pages/Contact';
 
 const StyledLayout = styled(L)`
   background: ${({ theme }) => theme.colors.base};
@@ -28,6 +29,7 @@ const Portfolio = () => {
             <Careers />
             <Projects />
             <Activities />
+            <Contact />
           </VerticalCarousel>
         </Content>
         <ThemeSwitch />

@@ -91,9 +91,9 @@ const EmptyDiv = styled.div`
 const categories = [
   'HOME',
   'PROFILE',
-  'ACTIVITIES',
   'CAREERS',
   'PROJECTS',
+  'ACTIVITIES',
   'CONTACT',
 ];
 

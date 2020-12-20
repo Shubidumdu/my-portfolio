@@ -27,6 +27,7 @@ const ButtonWrap = styled.div`
   pointer-events: none;
   width: 100%;
   bottom: 50%;
+  transform: translateY(50%);
   padding: 0 1rem;
 `;
 
