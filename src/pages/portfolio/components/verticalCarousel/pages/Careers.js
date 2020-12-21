@@ -48,7 +48,11 @@ const Careers = () => {
           );
         })}
       </ContentCarousel>
-      <Modal onCancel={() => setModal(false)} visible={openModal}>
+      <Modal
+        title={cards[index].title}
+        onCancel={() => setModal(false)}
+        visible={openModal}
+      >
         <ModalInfo />
       </Modal>
     </Container>
