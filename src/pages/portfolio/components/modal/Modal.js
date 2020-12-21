@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Modal as M } from 'antd';
 import styled from 'styled-components';
-import { SlickContext } from '../..';
+import { useVerticalSlickContext } from '../../SlickProvider';
 
 const StyledModal = styled(M)``;
 
@@ -15,7 +15,7 @@ const settings = {
 };
 
 const Modal = ({ children, visible, ...rest }) => {
-  const { setStuck } = useContext(SlickContext);
+  const { setStuck } = useVerticalSlickContext();
 
   useEffect(() => {
     setStuck(visible);
