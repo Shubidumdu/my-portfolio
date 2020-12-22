@@ -3,8 +3,8 @@ import ContentCarousel from '../../contentCarousel/ContentCarousel';
 import { Card as Container } from '../VerticalCarousel';
 import Card from '../../contentCarousel/Card';
 import Modal from '../../modal/Modal';
-import Adcapsule from '../../modal/components/Adcapsule';
-import TheMong from '../../modal/components/TheMong';
+import Adcapsule from '../../modal/components/careers/Adcapsule';
+import TheMong from '../../modal/components/careers/TheMong';
 
 const cards = [
   {

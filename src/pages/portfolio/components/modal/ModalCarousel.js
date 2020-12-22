@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Button, Image } from 'antd';
 import React, { useRef } from 'react';
 import Carousel from 'react-slick';
 import styled from 'styled-components';
@@ -20,8 +20,30 @@ const PageButton = styled(Button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2px;
+  margin: 5px;
   transition: 0.3s;
+  border-radius: 2px;
+
+  background: ${({ theme }) =>
+    theme.mode === 'light' ? theme.colors.white : theme.colors.sub};
+  border: 1px solid
+    ${({ theme }) =>
+      theme.mode === 'light' ? theme.colors.sub : theme.colors.white};
+  color: ${({ theme }) =>
+    theme.mode === 'light' ? theme.colors.black : theme.colors.white};
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.main};
+    border: 1px solid ${({ theme }) => theme.colors.main};
+    background: ${({ theme }) =>
+      theme.mode === 'light' ? theme.colors.white : theme.colors.sub};
+  }
+
+  &.slick-active {
+    color: ${({ theme }) => theme.colors.white};
+    background: ${({ theme }) => theme.colors.main};
+    border: 1px solid ${({ theme }) => theme.colors.main};
+  }
 `;
 
 const Dots = styled.div`
@@ -29,6 +51,11 @@ const Dots = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2px;
+`;
+
+const Img = styled.img`
+  display: block;
+  height: 250px;
 `;
 
 const settings = {
@@ -78,7 +105,7 @@ const ModalCarousel = ({ images }) => {
     <CarouselWrap>
       <Carousel ref={slider} {...settings}>
         {images.map((image, idx) => (
-          <img alt={image} key={idx} src={image} />
+          <Image alt={image} key={idx} src={image} />
         ))}
       </Carousel>
     </CarouselWrap>

@@ -42,7 +42,8 @@ const StyledCard = styled(C)`
   }
 
   border: 1px solid
-    ${({ theme }) => (theme.mode === 'light' ? '#fff' : theme.colors.sub)};
+    ${({ theme }) =>
+      theme.mode === 'light' ? theme.colors.white : theme.colors.sub};
   transition: 0.3s;
 
   > .ant-card-body {

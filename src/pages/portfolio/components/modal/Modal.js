@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Modal as M } from 'antd';
 import styled from 'styled-components';
 import { useVerticalSlickContext } from '../../SlickProvider';
@@ -18,10 +18,14 @@ const StyledModal = styled(M)`
     }
 
     > .ant-modal-header {
+      text-align: center;
       background: ${({ theme }) =>
         theme.mode === 'light'
           ? theme.colors.white
           : theme.colors.sub} !important;
+      border-bottom: 1px solid
+        ${({ theme }) =>
+          theme.mode === 'light' ? theme.colors.base : theme.colors.black};
 
       > .ant-modal-title {
         color: ${({ theme }) =>
@@ -40,12 +44,16 @@ const StyledModal = styled(M)`
   }
 `;
 
+export const ModalBody = styled.div`
+  padding: 1.5rem;
+`;
+
 const settings = {
   footer: null,
   bodyStyle: {
     padding: 0,
   },
-  maskClosable: false,
+  maskClosable: true,
   destroyOnClose: true,
 };
 
