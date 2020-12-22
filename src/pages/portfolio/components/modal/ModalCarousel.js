@@ -53,11 +53,6 @@ const Dots = styled.div`
   margin: 2px;
 `;
 
-const Img = styled.img`
-  display: block;
-  height: 250px;
-`;
-
 const settings = {
   adaptiveHeight: true,
   arrows: false,
