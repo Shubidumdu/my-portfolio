@@ -148,10 +148,18 @@ const Profile = () => {
               </InfoDesc>
               <InfoHead>계정</InfoHead>
               <LinkWrap>
-                <LinkButton type="link">
+                <LinkButton
+                  href="https://github.com/Shubidumdu"
+                  target="_blank"
+                  type="link"
+                >
                   <SiGithub size="100%" />
                 </LinkButton>
-                <LinkButton type="link">
+                <LinkButton
+                  href="https://stackoverflow.com/users/14672911/won-gyo-seo"
+                  target="_blank"
+                  type="link"
+                >
                   <SiStackoverflow size="100%" />
                 </LinkButton>
               </LinkWrap>
