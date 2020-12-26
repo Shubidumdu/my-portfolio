@@ -8,8 +8,6 @@ const images = [...Array(3).keys()].map(
       .default,
 );
 
-console.log(images);
-
 const Adcapsule = ({}) => {
   return (
     <div>
