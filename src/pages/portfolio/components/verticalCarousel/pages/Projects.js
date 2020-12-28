@@ -4,6 +4,7 @@ import { Card as Container } from '../VerticalCarousel';
 import Card from '../../contentCarousel/Card';
 import Modal from '../../modal/Modal';
 import CopyCats from '../../../components/modal/components/projects/CopyCats';
+import HumanFace from '../../modal/components/projects/HumanFace';
 
 const cards = [
   {
@@ -18,6 +19,7 @@ const cards = [
     desc: '얼굴이미지 분석 웹 앱',
     image: 'facereport.png',
     sub: '2020',
+    ModalInfo: HumanFace,
   },
   {
     title: '절대집중시간',
