@@ -16,6 +16,14 @@ const CarouselWrap = styled.div`
   }
 `;
 
+const ImageWrap = styled.div`
+  cursor: pointer;
+  transition: 0.3s;
+  :hover {
+    filter: brightness(1.1);
+  }
+`;
+
 const PageButton = styled(Button)`
   display: flex;
   justify-content: center;
@@ -100,7 +108,9 @@ const ModalCarousel = ({ images }) => {
     <CarouselWrap>
       <Carousel ref={slider} {...settings}>
         {images.map((image, idx) => (
-          <Image alt={image} key={idx} src={image} />
+          <ImageWrap>
+            <Image alt={image} key={idx} src={image} />
+          </ImageWrap>
         ))}
       </Carousel>
     </CarouselWrap>

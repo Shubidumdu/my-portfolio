@@ -1,20 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ContentCarousel from '../../contentCarousel/ContentCarousel';
 import { Card as Container } from '../VerticalCarousel';
 import Card from '../../contentCarousel/Card';
+import Modal from '../../modal/Modal';
+import CopyCats from '../../../components/modal/components/projects/CopyCats';
 
 const cards = [
-  // {
-  //   title: '롯데뮤지엄',
-  //   desc: '애드캡슐소프트 인턴 과제',
-  //   image: 'lottemuseum.png',
-  //   sub: '2019',
-  // },
   {
     title: '카피캣츠',
     desc: 'SNS형 성대모사 플랫폼',
     image: 'copycats.png',
     sub: '2019',
+    ModalInfo: CopyCats,
   },
   {
     title: '인간안면보고서',
@@ -43,15 +40,37 @@ const cards = [
 ];
 
 const Projects = () => {
+  const [index, setIndex] = useState(0);
+  const [openModal, setModal] = useState(false);
+  const onClick = (idx) => {
+    setIndex(idx);
+    setModal((open) => !open);
+  };
+  const ModalInfo = cards[index].ModalInfo;
+
   return (
     <Container>
       <ContentCarousel>
-        {cards.map(({ image, ...rest }) => {
+        {cards.map(({ image, ...rest }, idx) => {
           const img = require(`../../../resources/images/projects/logos/${image}`)
             .default;
-          return <Card key={image} image={img} {...rest} />;
+          return (
+            <Card
+              onClick={() => onClick(idx)}
+              key={image}
+              image={img}
+              {...rest}
+            />
+          );
         })}
       </ContentCarousel>
+      <Modal
+        title={cards[index].title}
+        onCancel={() => setModal(false)}
+        visible={openModal}
+      >
+        <ModalInfo />
+      </Modal>
     </Container>
   );
 };

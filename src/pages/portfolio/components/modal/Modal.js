@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { Modal as M } from 'antd';
-import styled from 'styled-components';
+import { Modal as M, Tag as T } from 'antd';
+import styled, { css, useTheme } from 'styled-components';
 import { useVerticalSlickContext } from '../../SlickProvider';
+import { darken, lighten } from 'polished';
 
 const StyledModal = styled(M)`
   > .ant-modal-content {
@@ -47,6 +48,23 @@ const StyledModal = styled(M)`
 export const ModalBody = styled.div`
   padding: 1.5rem;
 `;
+
+export const TagWrap = styled.div`
+  margin-top: 1rem;
+`;
+
+const StyledTag = styled(T)`
+  & + & {
+    margin: 0 10px 10px 0;
+  }
+`;
+
+export const Tag = ({ children }) => {
+  const theme = useTheme();
+  const color =
+    theme.mode === 'light' ? 'default' : lighten(0.1, theme.colors.base);
+  return <StyledTag color={color}>{children}</StyledTag>;
+};
 
 const settings = {
   footer: null,
