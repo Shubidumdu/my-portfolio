@@ -4,6 +4,7 @@ import { Card as Container } from '../VerticalCarousel';
 import Card from '../../contentCarousel/Card';
 import Modal from '../../modal/Modal';
 import Ausung from '../../modal/components/activities/Ausung';
+import LikeLion from '../../modal/components/activities/LikeLion';
 
 const cards = [
   {
@@ -18,6 +19,7 @@ const cards = [
     desc: '웹 프로그래밍 연합 동아리',
     image: 'likelion.png',
     sub: '2018.03 ~ 2018.12',
+    ModalInfo: LikeLion,
   },
   {
     title: '8voce',
