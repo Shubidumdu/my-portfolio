@@ -7,6 +7,7 @@ import Ausung from '../../modal/components/activities/Ausung';
 import LikeLion from '../../modal/components/activities/LikeLion';
 import EightVoce from '../../modal/components/activities/EightVoce';
 import DnA from '../../modal/components/activities/DnA';
+import LikeLionDesign from '../../modal/components/activities/LikeLionDesign';
 
 const cards = [
   {
@@ -42,6 +43,7 @@ const cards = [
     desc: '디자인 교육 연합 동아리',
     image: 'likelion_design.png',
     sub: '2019.07 ~ 2019.12',
+    ModalInfo: LikeLionDesign,
   },
 ];
 

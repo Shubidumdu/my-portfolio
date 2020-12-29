@@ -12,7 +12,7 @@ const EightVoce = ({}) => {
   return (
     <div>
       <ModalCarousel images={images} />
-      <ModalBody>버스킹 밴드 팀 '8voce'에서 베이스를 맡았습니다.</ModalBody>
+      <ModalBody>버스킹 밴드 팀 '8voce'의 베이시스트로 활동했습니다.</ModalBody>
     </div>
   );
 };
