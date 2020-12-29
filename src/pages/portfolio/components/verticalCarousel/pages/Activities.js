@@ -5,6 +5,7 @@ import Card from '../../contentCarousel/Card';
 import Modal from '../../modal/Modal';
 import Ausung from '../../modal/components/activities/Ausung';
 import LikeLion from '../../modal/components/activities/LikeLion';
+import EightVoce from '../../modal/components/activities/EightVoce';
 
 const cards = [
   {
@@ -26,6 +27,7 @@ const cards = [
     desc: '버스킹 밴드',
     image: '8voce.jpg',
     sub: '2018.04 ~ 2019.08',
+    ModalInfo: EightVoce,
   },
   {
     title: 'D&A ML Session',
