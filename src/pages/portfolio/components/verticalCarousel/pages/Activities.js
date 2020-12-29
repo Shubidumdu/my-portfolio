@@ -6,6 +6,7 @@ import Modal from '../../modal/Modal';
 import Ausung from '../../modal/components/activities/Ausung';
 import LikeLion from '../../modal/components/activities/LikeLion';
 import EightVoce from '../../modal/components/activities/EightVoce';
+import DnA from '../../modal/components/activities/DnA';
 
 const cards = [
   {
@@ -34,6 +35,7 @@ const cards = [
     desc: '국민대학교 빅데이터경영통계 학회',
     image: 'dna.png',
     sub: '2018.08 ~ 2018.12',
+    ModalInfo: DnA,
   },
   {
     title: '멋쟁이 사자처럼 디자인',
