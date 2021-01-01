@@ -3,8 +3,9 @@ import ContentCarousel from '../../contentCarousel/ContentCarousel';
 import { Card as Container } from '../VerticalCarousel';
 import Card from '../../contentCarousel/Card';
 import Modal from '../../modal/Modal';
-import CopyCats from '../../../components/modal/components/projects/CopyCats';
+import CopyCats from '../../modal/components/projects/CopyCats';
 import HumanFace from '../../modal/components/projects/HumanFace';
+import HyperFocus from '../../modal/components/projects/HyperFocus';
 
 const cards = [
   {
@@ -26,6 +27,7 @@ const cards = [
     desc: '반복 집중/휴식 웹 타이머',
     image: 'hyperfocus.png',
     sub: '2020',
+    ModalInfo: HyperFocus,
   },
   {
     title: '밍글타운',
