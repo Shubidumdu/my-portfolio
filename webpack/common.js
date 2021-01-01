@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|svg|ttf|woff|eot)$/i,
+        test: /\.(png|jpe?g|gif|svg|ttf|woff|eot|ico)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -53,6 +53,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      favicon: './src/public/favicon.ico',
       template: './src/public/index.html',
     }),
     new MiniCssExtractPlugin(),
