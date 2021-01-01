@@ -7,6 +7,8 @@ import { HiMenu } from 'react-icons/hi';
 const { Header: H } = Layout;
 
 const StyledHeader = styled(H)`
+  width: 100%;
+  position: fixed;
   color: ${({ theme }) =>
     theme.mode === 'light' ? theme.colors.black : theme.colors.white};
   background: ${({ theme }) =>

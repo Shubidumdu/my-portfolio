@@ -64,6 +64,7 @@ export const Inner = styled.div`
 const CarouselWrap = styled.div`
   position: relative;
   width: 100%;
+  padding-top: 64px;
   height: 100%;
 `;
 
