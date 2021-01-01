@@ -1,10 +1,11 @@
 import React from 'react';
-import { ModalBody, Tag, TagWrap } from '../../Modal';
+import { EnterButton, ModalBody, Tag, TagWrap } from '../../Modal';
 import ModalCarousel from '../../ModalCarousel';
 
 const stacks = [
   'TypeScript',
   'React',
+  'React-Router',
   'Node.js',
   'Redux',
   'Redux-thunk',
@@ -30,6 +31,7 @@ const MingleTown = () => {
   return (
     <div>
       <ModalCarousel images={images} />
+      <EnterButton href="https://www.mingletown.co.kr" />
       <ModalBody>
         (주)더몽의 쉐어하우스 중개 플랫폼 "밍글타운"을 개발했습니다.
         <TagWrap>
