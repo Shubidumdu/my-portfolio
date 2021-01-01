@@ -7,6 +7,7 @@ import CopyCats from '../../modal/components/projects/CopyCats';
 import HumanFace from '../../modal/components/projects/HumanFace';
 import HyperFocus from '../../modal/components/projects/HyperFocus';
 import FiveColor from '../../modal/components/projects/FiveColors';
+import MingleTown from '../../modal/components/projects/MingleTown';
 
 const cards = [
   {
@@ -32,9 +33,10 @@ const cards = [
   },
   {
     title: '밍글타운',
-    desc: '쉐어하우스 플랫폼',
+    desc: '쉐어하우스 중개 플랫폼',
     image: 'mingletown.png',
     sub: '2020',
+    ModalInfo: MingleTown,
   },
   {
     title: '오깔라',
