@@ -4,6 +4,7 @@ import { Card, Inner } from '../VerticalCarousel';
 import profilImg from '../../../resources/images/profile2.png';
 import { Button } from 'antd';
 import { SiGithub, SiStackoverflow } from 'react-icons/si';
+import { ImBlog } from 'react-icons/im';
 
 const Container = styled.div`
   display: flex;
@@ -116,8 +117,14 @@ const LinkWrap = styled.div`
 `;
 
 const LinkButton = styled(Button)`
-  width: 4rem;
-  height: 4rem;
+  margin-top: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+
+  & + & {
+    margin-left: 1rem;
+  }
 `;
 
 const Profile = () => {
@@ -161,6 +168,13 @@ const Profile = () => {
                   type="link"
                 >
                   <SiStackoverflow size="100%" />
+                </LinkButton>
+                <LinkButton
+                  href="https://muang-kim.tistory.com/"
+                  target="_blank"
+                  type="link"
+                >
+                  <ImBlog size="100%" />
                 </LinkButton>
               </LinkWrap>
             </InfoGrid>

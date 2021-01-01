@@ -28,8 +28,11 @@ const StyledCarousel = styled(Carousel)`
   }
 `;
 
-const vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+const resizeHeight = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+};
+window.addEventListener('resize', resizeHeight);
 
 export const Card = styled.div`
   width: 100%;
