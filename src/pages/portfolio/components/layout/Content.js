@@ -4,9 +4,7 @@ import styled from 'styled-components';
 
 const { Content: C } = Layout;
 
-const StyledContent = styled(C)`
-  overscroll-behavior-y: contain;
-`;
+const StyledContent = styled(C)``;
 
 const Content = ({ children }) => {
   return <StyledContent>{children}</StyledContent>;
