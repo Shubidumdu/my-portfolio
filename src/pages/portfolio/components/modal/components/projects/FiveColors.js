@@ -2,21 +2,30 @@ import React from 'react';
 import { ModalBody, Tag, TagWrap } from '../../Modal';
 import ModalCarousel from '../../ModalCarousel';
 
-const stacks = ['ExpressJS', 'ejs', 'HTML', 'CSS', 'Javascript', 'Heroku'];
+const stacks = [
+  'React',
+  'Redux',
+  'Redux-Thunk',
+  'Styled-components',
+  'Bulma',
+  'AWS S3',
+  'AWS CloudFront',
+  'AWS API GateWay',
+  'AWS Lambda',
+];
 
 const images = [...Array(4).keys()].map(
   (number) =>
-    require(`../../../../resources/images/projects/hyperfocus/${number}.png`)
+    require(`../../../../resources/images/projects/5color/${number}.png`)
       .default,
 );
 
-const HyperFocus = () => {
+const FiveColor = () => {
   return (
     <div>
       <ModalCarousel images={images} />
       <ModalBody>
-        개인적으로 이용할 목적으로 반복 집중 / 휴식 웹 타이머 "절대집중시간"을
-        개발했습니다. 라이브러리의 사용을 최소화하고자 했습니다.
+        옷 색깔 조합 추천 PWA '오깔라'를 개발했습니다.
         <TagWrap>
           {stacks.map((stack) => (
             <Tag key={stack}>{stack}</Tag>
@@ -27,4 +36,4 @@ const HyperFocus = () => {
   );
 };
 
-export default HyperFocus;
+export default FiveColor;

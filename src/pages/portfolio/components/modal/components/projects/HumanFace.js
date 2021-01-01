@@ -11,6 +11,7 @@ const stacks = [
   'Styled-components',
   'Express.js',
   'Naver Clova API',
+  'Heroku',
 ];
 
 const images = [...Array(3).keys()].map(

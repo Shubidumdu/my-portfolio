@@ -6,6 +6,7 @@ import Modal from '../../modal/Modal';
 import CopyCats from '../../modal/components/projects/CopyCats';
 import HumanFace from '../../modal/components/projects/HumanFace';
 import HyperFocus from '../../modal/components/projects/HyperFocus';
+import FiveColor from '../../modal/components/projects/FiveColors';
 
 const cards = [
   {
@@ -40,6 +41,7 @@ const cards = [
     desc: '옷 색깔 조합 추천 웹 앱',
     image: '5color.png',
     sub: '2020',
+    ModalInfo: FiveColor,
   },
 ];
 
