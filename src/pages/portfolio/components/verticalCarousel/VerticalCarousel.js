@@ -70,13 +70,13 @@ const CarouselWrap = styled.div`
 
 const UpArrow = styled.div`
   position: absolute;
-  top: 0.5rem;
+  top: calc(0.5rem + 64px);
   left: 50%;
   transform: translateX(-50%);
   color: ${({ theme }) => theme.colors.main};
 
   @media (max-width: 700px) {
-    top: 0;
+    top: 64px;
   }
 `;
 

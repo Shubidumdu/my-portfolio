@@ -108,7 +108,7 @@ const ModalCarousel = ({ images }) => {
     <CarouselWrap>
       <Carousel ref={slider} {...settings}>
         {images.map((image, idx) => (
-          <ImageWrap>
+          <ImageWrap key={image}>
             <Image alt={image} key={idx} src={image} />
           </ImageWrap>
         ))}
