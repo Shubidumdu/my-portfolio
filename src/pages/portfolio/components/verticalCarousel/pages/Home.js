@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import { Card, Inner } from '../VerticalCarousel';
-import mainImg from '../../../resources/images/profile5.png';
+import mainImgLight from '../../../resources/images/profile5.png';
+import mainImgDark from '../../../resources/images/profile1.png';
 
 const ImgWrap = styled.div`
   height: 70%;
@@ -12,6 +13,7 @@ const ImgWrap = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  transition: 0.3s;
 
   @media (max-width: 550px) {
     width: 85%;
@@ -77,6 +79,8 @@ const LargeTitle = styled.div`
 `;
 
 const Home = () => {
+  const themeMode = useTheme().mode;
+
   return (
     <Card>
       <Inner>
@@ -84,11 +88,15 @@ const Home = () => {
           <IntroWrap>
             <LargeTitle>안녕하세요</LargeTitle>
             <MediumTitle>
-              개성과 발전을 중요시하는 개발자 서원교입니다
+              트렌드와 발전을 중요시하는 개발자 서원교입니다
             </MediumTitle>
           </IntroWrap>
           <ImgWrap>
-            <MainImg src={mainImg} />
+            {themeMode === 'light' ? (
+              <MainImg src={mainImgLight} />
+            ) : (
+              <MainImg src={mainImgDark} />
+            )}
           </ImgWrap>
         </Container>
       </Inner>
