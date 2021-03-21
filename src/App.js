@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 import Portfolio from './pages/portfolio';
 import { ThemeProvider } from 'styled-components';
-import { useTheme } from './theme/hooks';
+import { useTheme } from './styles/theme/hooks';
 
 export const ToggleThemeContext = createContext(null);
 

@@ -77,7 +77,7 @@ const Image = styled.img`
   border-radius: 1rem 1rem 0 0 !important;
 `;
 
-const Card = ({ onClick, image, title, desc, sub }) => {
+const ContentContainer = ({ onClick, image, title, desc, sub }) => {
   return (
     <CardWrap>
       <StyledCard
@@ -98,4 +98,4 @@ const Card = ({ onClick, image, title, desc, sub }) => {
   );
 };
 
-export default Card;
+export default ContentContainer;

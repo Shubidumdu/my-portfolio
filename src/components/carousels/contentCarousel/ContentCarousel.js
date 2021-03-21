@@ -62,14 +62,14 @@ const ContentCarousel = ({ children, noArrow = false }) => {
   };
 
   return (
-    <>
+    <div>
       <StyledCarousel ref={slick} {...settings}>
         {children}
       </StyledCarousel>
       <ArrowWrap noArrow={noArrow}>
         <CarouselButtons onPrev={onPrev} onNext={onNext} />
       </ArrowWrap>
-    </>
+    </div>
   );
 };
 

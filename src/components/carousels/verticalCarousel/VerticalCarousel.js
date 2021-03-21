@@ -3,9 +3,9 @@ import Carousel from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.less';
 import 'slick-carousel/slick/slick-theme.less';
-import { useVerticalSlickContext } from '../../SlickProvider';
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi';
 import { Button } from 'antd';
+import { useVerticalCarouselContext } from '../../../providers/SlickProvider';
 
 const settings = {
   dots: false,
@@ -93,7 +93,7 @@ const DownArrow = styled.div`
 `;
 
 const VerticalCarousel = ({ children }) => {
-  const { ref: slick, index, setIndex, isStuck } = useVerticalSlickContext();
+  const { ref: slick, index, setIndex, isStuck } = useVerticalCarouselContext();
   const beforeChange = (_, idx) => {
     setIndex(idx);
   };

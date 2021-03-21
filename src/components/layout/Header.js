@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Drawer, Layout, Menu } from 'antd';
 import styled, { useTheme } from 'styled-components';
-import { useVerticalSlickContext } from '../../SlickProvider';
 import { HiMenu } from 'react-icons/hi';
+import { useVerticalCarouselContext } from '../../providers/SlickProvider';
 
 const { Header: H } = Layout;
 
@@ -109,7 +109,7 @@ const drawerSettings = {
 };
 
 const Header = () => {
-  const { index: slickIndex, ref: slick } = useVerticalSlickContext();
+  const { index: slickIndex, ref: slick } = useVerticalCarouselContext();
   const { mode } = useTheme();
   const [openDrawer, setDrawer] = useState(false);
   const toggleDrawer = (e) => {

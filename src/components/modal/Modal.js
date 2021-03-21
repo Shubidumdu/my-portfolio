@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Button, Modal as M, Tag as T } from 'antd';
-import styled, { css, useTheme } from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import { useVerticalSlickContext } from '../../SlickProvider';
-import { darken, lighten } from 'polished';
+import { lighten } from 'polished';
 import { MdOpenInBrowser } from 'react-icons/md';
 
 const StyledModal = styled(M)`
@@ -57,14 +57,12 @@ const ButtonWrap = styled.div`
   margin-top: 1rem;
 `;
 
-const StyledEnterButton = styled(Button)``;
-
 export const EnterButton = ({ href }) => {
   return (
     <ButtonWrap>
-      <StyledEnterButton href={href} target="_blank" type="link">
+      <Button href={href} target="_blank" type="link">
         <MdOpenInBrowser size="2rem" />
-      </StyledEnterButton>
+      </Button>
     </ButtonWrap>
   );
 };

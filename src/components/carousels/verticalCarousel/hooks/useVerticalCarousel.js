@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 
-export const useVerticalSlick = () => {
+const useVerticalCarousel = () => {
   const slick = useRef(null);
   const [idx, setIdx] = useState(0);
   const [isStuck, setStuck] = useState(false);
@@ -24,3 +24,5 @@ export const useVerticalSlick = () => {
 
   return { ref: slick, index: idx, setIndex: setIdx, isStuck, setStuck };
 };
+
+export default useVerticalCarousel;
