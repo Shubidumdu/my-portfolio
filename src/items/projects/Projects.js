@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ContentCarousel from '../../contentCarousel/ContentCarousel';
-import { Card as Container } from '../VerticalCarousel';
+import ContentCarousel from '../../components/carousels/contentCarousel/ContentCarousel';
+import { Card as Container } from '../../components/carousels/verticalCarousel/VerticalCarousel';
 import Card from '../../contentCarousel/Card';
 import Modal from '../../modal/Modal';
 import CopyCats from '../../modal/components/projects/CopyCats';

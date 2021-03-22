@@ -1,6 +1,6 @@
 import React from 'react';
-import { ModalBody } from '../../Modal';
-import ModalCarousel from '../../ModalCarousel';
+import { ModalBody } from '../../components/modal/Modal';
+import ModalCarousel from '../../components/carousels/modalCarousel/ModalCarousel';
 
 const images = ['0.png', '1.jpg'].map(
   (number) =>

@@ -1,6 +1,11 @@
 import React from 'react';
-import { EnterButton, ModalBody, Tag, TagWrap } from '../../Modal';
-import ModalCarousel from '../../ModalCarousel';
+import {
+  EnterButton,
+  ModalBody,
+  Tag,
+  TagWrap,
+} from '../../components/modal/Modal';
+import ModalCarousel from '../../components/carousels/modalCarousel/ModalCarousel';
 
 const stacks = [
   'TypeScript',
