@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Carousel from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.less';
@@ -18,52 +18,17 @@ const ArrowWrap = styled.div`
   }
 `;
 
-const settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  draggable: false,
-  swipe: false,
-  swipeToSlide: false,
-  centerMode: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  centerPadding: 0,
-  speed: 500,
-  responsive: [
-    {
-      breakpoint: 769,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        initialSlide: 1,
-        centerPadding: 0,
-      },
-    },
-    {
-      breakpoint: 481,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        initialSlide: 1,
-        centerPadding: 0,
-      },
-    },
-  ],
-};
-
-const ContentCarousel = ({ children, noArrow = false }) => {
-  const slick = useRef();
-  const onPrev = () => {
-    slick.current.slickPrev();
-  };
-  const onNext = () => {
-    slick.current.slickNext();
-  };
-
+const ContentCarousel = ({
+  children,
+  noArrow = false,
+  slick,
+  onPrev,
+  onNext,
+  ...rest
+}) => {
   return (
     <div>
-      <StyledCarousel ref={slick} {...settings}>
+      <StyledCarousel ref={slick} {...rest}>
         {children}
       </StyledCarousel>
       <ArrowWrap noArrow={noArrow}>

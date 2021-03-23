@@ -7,20 +7,6 @@ import { HiChevronDown, HiChevronUp } from 'react-icons/hi';
 import { Button } from 'antd';
 import { useVerticalCarouselContext } from '../../../providers/SlickProvider';
 
-const settings = {
-  dots: false,
-  accessibility: false,
-  arrows: false,
-  infinite: false,
-  draggable: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  speed: 500,
-  vertical: true,
-  verticalSwiping: true,
-  swipeToSlide: true,
-};
-
 const StyledCarousel = styled(Carousel)`
   .slick-slide {
     border: none;
@@ -92,36 +78,18 @@ const DownArrow = styled.div`
   }
 `;
 
-const VerticalCarousel = ({ children }) => {
-  const { ref: slick, index, setIndex, isStuck } = useVerticalCarouselContext();
-  const beforeChange = (_, idx) => {
-    setIndex(idx);
-  };
-  const stuckSettings = isStuck
-    ? {
-        draggable: false,
-        verticalSwiping: false,
-        swipeToSlide: false,
-        touchMove: false,
-      }
-    : {};
-
-  const onPrev = () => {
-    slick.current.slickPrev();
-  };
-
-  const onNext = () => {
-    slick.current.slickNext();
-  };
-
+const VerticalCarousel = ({
+  children,
+  slick,
+  beforeChange,
+  onPrev,
+  onNext,
+  index,
+  ...rest
+}) => {
   return (
     <CarouselWrap>
-      <StyledCarousel
-        ref={slick}
-        beforeChange={beforeChange}
-        {...settings}
-        {...stuckSettings}
-      >
+      <StyledCarousel ref={slick} beforeChange={beforeChange} {...rest}>
         {children}
       </StyledCarousel>
       {index !== 0 ? (

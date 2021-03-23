@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { ThemeProvider as Provider } from 'styled-components';
 
 const lightTheme = {
@@ -24,7 +24,14 @@ const initialState = {
   colors: mode === 'light' ? lightTheme : darkTheme,
 };
 
-export const useTheme = () => {
+const ToggleThemeContext = createContext(null);
+
+export const useToggleThemeContext = () => {
+  const toggleTheme = useContext(ToggleThemeContext);
+  return toggleTheme;
+};
+
+const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(initialState);
   const toggleTheme = () => {
     setTheme((theme) => {
@@ -38,19 +45,6 @@ export const useTheme = () => {
       };
     });
   };
-
-  return { theme, toggleTheme };
-};
-
-const ToggleThemeContext = createContext(null);
-
-export const useThemeContext = () => {
-  const toggleTheme = useContext(ToggleThemeContext);
-  return toggleTheme;
-};
-
-const ThemeProvider = ({ children }) => {
-  const { theme, toggleTheme } = useTheme();
 
   return (
     <Provider theme={theme}>

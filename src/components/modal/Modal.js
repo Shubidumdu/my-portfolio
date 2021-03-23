@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react';
-import { Button, Modal as M, Tag as T } from 'antd';
-import styled, { useTheme } from 'styled-components';
-import { useVerticalSlickContext } from '../../SlickProvider';
-import { lighten } from 'polished';
-import { MdOpenInBrowser } from 'react-icons/md';
+import React from 'react';
+import { Modal as M } from 'antd';
+import styled from 'styled-components';
 
 const StyledModal = styled(M)`
   > .ant-modal-content {
@@ -46,63 +43,14 @@ const StyledModal = styled(M)`
   }
 `;
 
-export const ModalBody = styled.div`
+const ModalBody = styled.div`
   padding: 1.5rem;
 `;
 
-const ButtonWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-`;
-
-export const EnterButton = ({ href }) => {
-  return (
-    <ButtonWrap>
-      <Button href={href} target="_blank" type="link">
-        <MdOpenInBrowser size="2rem" />
-      </Button>
-    </ButtonWrap>
-  );
-};
-
-export const TagWrap = styled.div`
-  margin-top: 1rem;
-`;
-
-const StyledTag = styled(T)`
-  & + & {
-    margin: 0 10px 10px 0;
-  }
-`;
-
-export const Tag = ({ children }) => {
-  const theme = useTheme();
-  const color =
-    theme.mode === 'light' ? 'default' : lighten(0.1, theme.colors.base);
-  return <StyledTag color={color}>{children}</StyledTag>;
-};
-
-const settings = {
-  footer: null,
-  bodyStyle: {
-    padding: 0,
-  },
-  maskClosable: true,
-  destroyOnClose: true,
-};
-
 const Modal = ({ children, visible, ...rest }) => {
-  const { setStuck } = useVerticalSlickContext();
-
-  useEffect(() => {
-    setStuck(visible);
-  }, [visible]);
-
   return (
     <StyledModal visible={visible} {...settings} {...rest}>
-      {children}
+      <ModalBody>{children}</ModalBody>
     </StyledModal>
   );
 };

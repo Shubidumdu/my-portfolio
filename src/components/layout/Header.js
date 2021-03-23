@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Drawer, Layout, Menu } from 'antd';
-import styled, { useTheme } from 'styled-components';
+import styled from 'styled-components';
 import { HiMenu } from 'react-icons/hi';
-import { useVerticalCarouselContext } from '../../providers/SlickProvider';
 
 const { Header: H } = Layout;
 
@@ -90,32 +89,16 @@ const EmptyDiv = styled.div`
   height: 66px;
 `;
 
-const categories = [
-  'HOME',
-  'PROFILE',
-  'CAREERS',
-  'PROJECTS',
-  'ACTIVITIES',
-  'CONTACT',
-];
-
-const drawerSettings = {
-  bodyStyle: {
-    padding: '0',
-  },
-  height: 'auto',
-  placement: 'top',
-  closable: false,
-};
-
-const Header = () => {
-  const { index: slickIndex, ref: slick } = useVerticalCarouselContext();
-  const { mode } = useTheme();
-  const [openDrawer, setDrawer] = useState(false);
-  const toggleDrawer = (e) => {
-    setDrawer((isOpen) => !isOpen);
-  };
-
+const Header = ({
+  slick,
+  slickIndex,
+  mode,
+  categories,
+  openDrawer,
+  toggleDrawer,
+  ...rest
+}) => {
+  const slickGoTo = (idx) => slick.current.slickGoTo(idx);
   return (
     <StyledHeader>
       <StyledMenu
@@ -123,17 +106,11 @@ const Header = () => {
         mode="horizontal"
         theme={mode}
       >
-        {categories.map((category, idx) => {
-          const onClick = () => {
-            slick.current.slickGoTo(idx);
-          };
-
-          return (
-            <StyledMenuItem onClick={onClick} key={idx}>
-              {category}
-            </StyledMenuItem>
-          );
-        })}
+        {categories.map((category, idx) => (
+          <StyledMenuItem onClick={() => slickGoTo(idx)} key={idx}>
+            {category}
+          </StyledMenuItem>
+        ))}
       </StyledMenu>
       <MobileHeaderWrap>
         <DrawerButton size="large" onClick={toggleDrawer} type="link">
@@ -144,24 +121,23 @@ const Header = () => {
         </PageTitle>
         <EmptyDiv />
       </MobileHeaderWrap>
-      <Drawer visible={openDrawer} onClose={toggleDrawer} {...drawerSettings}>
+      <Drawer visible={openDrawer} onClose={toggleDrawer} {...rest}>
         <DrawerMenu
           selectedKeys={[slickIndex.toString()]}
           mode="vertical"
           theme={mode}
         >
-          {categories.map((category, idx) => {
-            const onClick = () => {
-              slick.current.slickGoTo(idx);
-              toggleDrawer();
-            };
-
-            return (
-              <DrawerMenuItem onClick={onClick} key={idx}>
-                {category}
-              </DrawerMenuItem>
-            );
-          })}
+          {categories.map((category, idx) => (
+            <DrawerMenuItem
+              onClick={() => {
+                slickGoTo(idx);
+                toggleDrawer();
+              }}
+              key={idx}
+            >
+              {category}
+            </DrawerMenuItem>
+          ))}
         </DrawerMenu>
       </Drawer>
     </StyledHeader>
