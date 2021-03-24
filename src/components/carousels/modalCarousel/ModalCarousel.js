@@ -1,5 +1,4 @@
-import { Button, Image } from 'antd';
-import React, { useRef } from 'react';
+import React from 'react';
 import Carousel from 'react-slick';
 import styled from 'styled-components';
 
@@ -16,18 +15,10 @@ const CarouselWrap = styled.div`
   }
 `;
 
-const ImageWrap = styled.div`
-  cursor: pointer;
-  transition: 0.3s;
-  :hover {
-    filter: brightness(1.1);
-  }
-`;
-
-const ModalCarousel = ({ children }) => {
+const ModalCarousel = ({ children, ...rest }) => {
   return (
     <CarouselWrap>
-      <Carousel {...settings}>{children}</Carousel>
+      <Carousel {...rest}>{children}</Carousel>
     </CarouselWrap>
   );
 };

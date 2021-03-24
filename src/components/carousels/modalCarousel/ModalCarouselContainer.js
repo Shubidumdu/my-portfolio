@@ -9,7 +9,9 @@ const settings = {
   dotsClass: 'dot-buttons',
   slidesToShow: 1,
   slidesToScroll: 1,
-  appendDots: (origin) => <Paginations origin={origin} />,
+  appendDots: function Dots(origin) {
+    return <Paginations origin={origin} />;
+  },
 };
 
 // 기존 inner

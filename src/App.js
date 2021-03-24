@@ -1,30 +1,34 @@
-import React, { createContext } from 'react';
-import { Content, Header } from 'antd/lib/layout/layout';
+import React from 'react';
 import Provider from './providers';
-
-export const ToggleThemeContext = createContext(null);
-
-const StyledLayout = styled(L)`
-  background: ${({ theme }) => theme.colors.base};
-`;
+import VerticalCarouselContainer from './components/carousels/verticalCarousel/VerticalCarouselContainer';
+import ThemeSwitch from './components/switch/ThemeSwitch';
+import HomeSection from './items/verticalCarousel/HomeSection';
+import ProfileSection from './items/verticalCarousel/ProfileSection';
+import CareersSection from './items/verticalCarousel/CareersSection';
+import ProjectsSection from './items/verticalCarousel/ProjectsSection';
+import ActivitiesSection from './items/verticalCarousel/ActivitiesSection';
+import ContactSection from './items/verticalCarousel/ContactSection';
+import Layout from './components/layout/Layout';
+import Header from './components/layout/Header';
+import Content from './components/layout/Content';
 
 const App = () => {
   return (
     <Provider>
-      <StyledLayout>
+      <Layout>
         <Header />
         <Content>
-          <VerticalCarousel>
-            <Home />
-            <Profile />
-            <Careers />
-            <Projects />
-            <Activities />
-            <Contact />
-          </VerticalCarousel>
+          <VerticalCarouselContainer>
+            <HomeSection />
+            <ProfileSection />
+            <CareersSection />
+            <ProjectsSection />
+            <ActivitiesSection />
+            <ContactSection />
+          </VerticalCarouselContainer>
         </Content>
         <ThemeSwitch />
-      </StyledLayout>
+      </Layout>
     </Provider>
   );
 };

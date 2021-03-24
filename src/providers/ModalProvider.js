@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const ModalContext = createContext(null);
 
@@ -8,12 +8,15 @@ export const useModalContext = () => {
 };
 
 const ModalProvider = ({ children }) => {
-  const [ModalInner, setModalInner] = useState(null);
-  const [isOpen, setModalOpen] = useState(null);
+  const [title, setTitle] = useState(null);
+  const [ModalContent, setModalContent] = useState(null);
+  const [modalOpen, setModalOpen] = useState(null);
   const contextValue = {
-    ModalInner,
-    setModalInner,
-    isOpen,
+    title,
+    setTitle,
+    ModalContent,
+    setModalContent,
+    modalOpen,
     setModalOpen,
   };
 

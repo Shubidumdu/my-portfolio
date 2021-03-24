@@ -1,14 +1,15 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import ModalProvider from './ModalProvider';
 import SlickProvider from './SlickProvider';
+import StyleProvider from './ThemeProvider';
 
 const Provider = ({ children }) => {
   return (
-    <ThemeProvider>
+    <StyleProvider>
       <SlickProvider>
         <ModalProvider>{children}</ModalProvider>
       </SlickProvider>
-    </ThemeProvider>
+    </StyleProvider>
   );
 };
 

@@ -1,5 +1,6 @@
+import React from 'react';
 import { createContext, useContext, useState } from 'react';
-import { ThemeProvider as Provider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 const lightTheme = {
   main: '#E94231',
@@ -31,7 +32,7 @@ export const useToggleThemeContext = () => {
   return toggleTheme;
 };
 
-const ThemeProvider = ({ children }) => {
+const StyleProvider = ({ children }) => {
   const [theme, setTheme] = useState(initialState);
   const toggleTheme = () => {
     setTheme((theme) => {
@@ -47,12 +48,10 @@ const ThemeProvider = ({ children }) => {
   };
 
   return (
-    <Provider theme={theme}>
-      <ToggleThemeContext.Provider value={toggleTheme}>
-        {children}
-      </ToggleThemeContext.Provider>
-    </Provider>
+    <ToggleThemeContext.Provider value={toggleTheme}>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </ToggleThemeContext.Provider>
   );
 };
 
-export default ThemeProvider;
+export default StyleProvider;

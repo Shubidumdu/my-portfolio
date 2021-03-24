@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card, Inner } from '../VerticalCarousel';
-import profilImg from '../../../resources/images/profile2.png';
+import profilImg from '../../images/profile2.png';
 import { Button } from 'antd';
 import { SiGithub, SiStackoverflow } from 'react-icons/si';
+import VerticalCarouselCard from '../../components/carousels/verticalCarousel/VerticalCarouselCard';
+import VerticalCarouselInner from '../../components/carousels/verticalCarousel/VerticalCarouselInner';
 
 const Container = styled.div`
   display: flex;
@@ -126,10 +127,10 @@ const LinkButton = styled(Button)`
   }
 `;
 
-const Profile = () => {
+const ProfileSection = () => {
   return (
-    <Card>
-      <Inner>
+    <VerticalCarouselCard>
+      <VerticalCarouselInner>
         <Container>
           <ImgContainer>
             <ProfileImg src={profilImg} />
@@ -172,9 +173,9 @@ const Profile = () => {
             </InfoGrid>
           </InfoWrap>
         </Container>
-      </Inner>
-    </Card>
+      </VerticalCarouselInner>
+    </VerticalCarouselCard>
   );
 };
 
-export default Profile;
+export default ProfileSection;

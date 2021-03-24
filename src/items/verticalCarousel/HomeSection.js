@@ -1,8 +1,9 @@
 import React from 'react';
 import styled, { useTheme } from 'styled-components';
-import { Card, Inner } from '../VerticalCarousel';
-import mainImgLight from '../../../resources/images/profile5.png';
-import mainImgDark from '../../../resources/images/profile1.png';
+import mainImgLight from '../../images/profile5.png';
+import mainImgDark from '../../images/profile1.png';
+import VerticalCarouselCard from '../../components/carousels/verticalCarousel/VerticalCarouselCard';
+import VerticalCarouselInner from '../../components/carousels/verticalCarousel/VerticalCarouselInner';
 
 const ImgWrap = styled.div`
   height: 70%;
@@ -78,12 +79,12 @@ const LargeTitle = styled.div`
   }
 `;
 
-const Home = () => {
+const HomeSection = () => {
   const themeMode = useTheme().mode;
 
   return (
-    <Card>
-      <Inner>
+    <VerticalCarouselCard>
+      <VerticalCarouselInner>
         <Container>
           <IntroWrap>
             <LargeTitle>안녕하세요</LargeTitle>
@@ -99,9 +100,9 @@ const Home = () => {
             )}
           </ImgWrap>
         </Container>
-      </Inner>
-    </Card>
+      </VerticalCarouselInner>
+    </VerticalCarouselCard>
   );
 };
 
-export default Home;
+export default HomeSection;

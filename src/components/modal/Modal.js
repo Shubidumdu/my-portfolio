@@ -49,7 +49,7 @@ const ModalBody = styled.div`
 
 const Modal = ({ children, visible, ...rest }) => {
   return (
-    <StyledModal visible={visible} {...settings} {...rest}>
+    <StyledModal visible={visible} {...rest}>
       <ModalBody>{children}</ModalBody>
     </StyledModal>
   );

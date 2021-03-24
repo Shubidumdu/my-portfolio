@@ -1,6 +1,7 @@
 import { lighten } from 'polished';
 import React from 'react';
-import { useTheme, Tag as T } from 'styled-components';
+import styled, { useTheme } from 'styled-components';
+import { Tag as T } from 'antd';
 
 const StyledTag = styled(T)`
   & + & {
@@ -22,8 +23,8 @@ const Tag = ({ children }) => {
 const TagList = ({ tags }) => {
   return (
     <TagWrap>
-      {tags.map((tag) => (
-        <Tag>{tag}</Tag>
+      {tags.map((tag, idx) => (
+        <Tag key={idx}>{tag}</Tag>
       ))}
     </TagWrap>
   );

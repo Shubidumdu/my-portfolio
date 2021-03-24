@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick.less';
 import 'slick-carousel/slick/slick-theme.less';
 import { HiChevronDown, HiChevronUp } from 'react-icons/hi';
 import { Button } from 'antd';
-import { useVerticalCarouselContext } from '../../../providers/SlickProvider';
 
 const StyledCarousel = styled(Carousel)`
   .slick-slide {
@@ -34,16 +33,6 @@ export const Card = styled.div`
   cursor: grab;
   &:active {
     cursor: grabbing;
-  }
-`;
-
-export const Inner = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 4rem;
-
-  @media (max-width: 550px) {
-    padding: 0;
   }
 `;
 

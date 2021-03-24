@@ -1,5 +1,7 @@
+import React from 'react';
 import { Button } from 'antd';
 import { MdOpenInBrowser } from 'react-icons/md';
+import styled from 'styled-components';
 
 const ButtonWrap = styled.div`
   display: flex;

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useVerticalCarouselContext } from '../../providers/SlickProvider';
 import { useToggleThemeContext } from '../../providers/ThemeProvider';
 import Header from './Header';
 
@@ -24,7 +25,7 @@ const HeaderContainer = () => {
   const { index: slickIndex, ref: slick } = useVerticalCarouselContext();
   const { mode } = useToggleThemeContext();
   const [openDrawer, setDrawer] = useState(false);
-  const toggleDrawer = (e) => {
+  const toggleDrawer = () => {
     setDrawer((isOpen) => !isOpen);
   };
   const props = {

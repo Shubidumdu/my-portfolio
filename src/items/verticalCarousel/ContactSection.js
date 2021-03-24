@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card, Inner } from '../VerticalCarousel';
 import { RiInstagramFill, RiKakaoTalkFill, RiMailFill } from 'react-icons/ri';
+import VerticalCarouselCard from '../../components/carousels/verticalCarousel/VerticalCarouselCard';
+import VerticalCarouselInner from '../../components/carousels/verticalCarousel/VerticalCarouselInner';
 
 const Container = styled.div`
   display: flex;
@@ -73,10 +74,10 @@ const InfoDesc = styled.div`
   font-size: 1rem;
 `;
 
-const Contact = () => {
+const ContactSection = () => {
   return (
-    <Card>
-      <Inner>
+    <VerticalCarouselCard>
+      <VerticalCarouselInner>
         <Container>
           <Title>Contact Me</Title>
           <InfoGrid>
@@ -100,9 +101,9 @@ const Contact = () => {
             </InfoDesc>
           </InfoGrid>
         </Container>
-      </Inner>
-    </Card>
+      </VerticalCarouselInner>
+    </VerticalCarouselCard>
   );
 };
 
-export default Contact;
+export default ContactSection;

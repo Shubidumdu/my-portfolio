@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Switch } from 'antd';
-import { ToggleThemeContext } from '../../App';
 import styled from 'styled-components';
+import { useToggleThemeContext } from '../../providers/ThemeProvider';
 
 const StyledSwitch = styled(Switch)`
   z-index: 1;
@@ -18,7 +18,7 @@ const settings = {
 const mode = localStorage.getItem('theme');
 
 const ThemeSwitch = () => {
-  const toggleTheme = useContext(ToggleThemeContext);
+  const toggleTheme = useToggleThemeContext;
   return (
     <StyledSwitch
       defaultChecked={mode === 'dark'}
