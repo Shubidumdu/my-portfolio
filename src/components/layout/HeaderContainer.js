@@ -23,7 +23,7 @@ const settings = {
 
 const HeaderContainer = () => {
   const { index: slickIndex, ref: slick } = useVerticalCarouselContext();
-  const { mode } = useToggleThemeContext();
+  const { theme } = useToggleThemeContext();
   const [openDrawer, setDrawer] = useState(false);
   const toggleDrawer = () => {
     setDrawer((isOpen) => !isOpen);
@@ -31,7 +31,7 @@ const HeaderContainer = () => {
   const props = {
     slick,
     slickIndex,
-    mode,
+    mode: theme.mode,
     categories,
     openDrawer,
     toggleDrawer,

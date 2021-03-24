@@ -18,7 +18,7 @@ const settings = {
 const mode = localStorage.getItem('theme');
 
 const ThemeSwitch = () => {
-  const toggleTheme = useToggleThemeContext;
+  const { toggleTheme } = useToggleThemeContext();
   return (
     <StyledSwitch
       defaultChecked={mode === 'dark'}

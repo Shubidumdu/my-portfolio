@@ -46,9 +46,13 @@ const StyleProvider = ({ children }) => {
       };
     });
   };
+  const context = {
+    theme,
+    toggleTheme,
+  };
 
   return (
-    <ToggleThemeContext.Provider value={toggleTheme}>
+    <ToggleThemeContext.Provider value={context}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ToggleThemeContext.Provider>
   );
