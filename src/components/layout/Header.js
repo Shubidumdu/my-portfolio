@@ -102,11 +102,11 @@ const Header = ({
   return (
     <StyledHeader>
       <StyledMenu
-        selectedKeys={[slickIndex?.toString()]}
+        selectedKeys={[slickIndex.toString()]}
         mode="horizontal"
         theme={mode}
       >
-        {categories?.map((category, idx) => (
+        {categories.map((category, idx) => (
           <StyledMenuItem onClick={() => slickGoTo(idx)} key={idx}>
             {category}
           </StyledMenuItem>
@@ -117,17 +117,17 @@ const Header = ({
           <HiMenu size="100%" />
         </DrawerButton>
         <PageTitle>
-          <span>{categories?.[slickIndex]}</span>
+          <span>{categories[slickIndex]}</span>
         </PageTitle>
         <EmptyDiv />
       </MobileHeaderWrap>
       <Drawer visible={openDrawer} onClose={toggleDrawer} {...rest}>
         <DrawerMenu
-          selectedKeys={[slickIndex?.toString()]}
+          selectedKeys={[slickIndex.toString()]}
           mode="vertical"
           theme={mode}
         >
-          {categories?.map((category, idx) => (
+          {categories.map((category, idx) => (
             <DrawerMenuItem
               onClick={() => {
                 slickGoTo(idx);

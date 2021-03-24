@@ -10,7 +10,6 @@ export const useVerticalCarouselContext = () => {
 
 const SlickProvider = ({ children }) => {
   const slick = useVerticalCarousel();
-  console.log(slick);
 
   return (
     <VerticalCarouselContext.Provider value={slick}>

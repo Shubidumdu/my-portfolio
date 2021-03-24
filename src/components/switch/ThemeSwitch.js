@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch } from 'antd';
 import styled from 'styled-components';
-import { useToggleThemeContext } from '../../providers/ThemeProvider';
+import { useToggleThemeContext } from '../../providers/StyleProvider';
 
 const StyledSwitch = styled(Switch)`
   z-index: 1;

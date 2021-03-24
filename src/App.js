@@ -9,14 +9,14 @@ import ProjectsSection from './items/verticalCarousel/ProjectsSection';
 import ActivitiesSection from './items/verticalCarousel/ActivitiesSection';
 import ContactSection from './items/verticalCarousel/ContactSection';
 import Layout from './components/layout/Layout';
-import Header from './components/layout/Header';
 import Content from './components/layout/Content';
+import HeaderContainer from './components/layout/HeaderContainer';
 
 const App = () => {
   return (
     <Provider>
       <Layout>
-        <Header />
+        <HeaderContainer />
         <Content>
           <VerticalCarouselContainer>
             <HomeSection />

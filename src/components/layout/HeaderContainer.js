@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useVerticalCarouselContext } from '../../providers/SlickProvider';
-import { useToggleThemeContext } from '../../providers/ThemeProvider';
+import { useToggleThemeContext } from '../../providers/StyleProvider';
 import Header from './Header';
 
 const categories = [

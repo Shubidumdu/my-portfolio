@@ -1,7 +1,7 @@
 import React from 'react';
 import ModalProvider from './ModalProvider';
 import SlickProvider from './SlickProvider';
-import StyleProvider from './ThemeProvider';
+import StyleProvider from './StyleProvider';
 
 const Provider = ({ children }) => {
   return (
