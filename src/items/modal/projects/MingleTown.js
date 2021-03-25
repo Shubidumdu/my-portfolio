@@ -2,6 +2,7 @@ import React from 'react';
 import TagList from '../../../components/modal/TagList';
 import ModalImageCarousel from '../../../components/carousels/modalCarousel/ModalImageCarousel';
 import EnterButton from '../../../components/modal/EnterButton';
+import ModalBody from '../../../components/modal/ModalBody';
 
 const stacks = [
   'TypeScript',
@@ -32,10 +33,10 @@ const MingleTown = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <EnterButton href="https://www.mingletown.co.kr" />
-      <div>
+      <ModalBody>
         (주)더몽의 쉐어하우스 중개 플랫폼 &quot;밍글타운&quot;을 개발했습니다.
         <TagList tags={stacks} />
-      </div>
+      </ModalBody>
     </div>
   );
 };

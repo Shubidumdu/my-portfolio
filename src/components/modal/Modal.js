@@ -43,14 +43,10 @@ const StyledModal = styled(M)`
   }
 `;
 
-const ModalBody = styled.div`
-  padding: 1.5rem;
-`;
-
 const Modal = ({ children, visible, ...rest }) => {
   return (
     <StyledModal visible={visible} {...rest}>
-      <ModalBody>{children}</ModalBody>
+      {children}
     </StyledModal>
   );
 };

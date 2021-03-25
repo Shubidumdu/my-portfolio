@@ -1,7 +1,8 @@
 import React from 'react';
 import ContentCarouselContainer from '../../components/carousels/contentCarousel/ContentCarouselContainer';
 import ContentItem from '../../components/carousels/contentCarousel/ContentItem';
-import { useModalContext } from '../../providers/ModalProvider';
+import ModalContainer from '../../components/modal/ModalContainer';
+import useModalStates from '../../hooks/useItemModalStates';
 import Ausung from '../modal/activities/Ausung';
 import DnA from '../modal/activities/DnA';
 import EightVoce from '../modal/activities/EightVoce';
@@ -47,28 +48,28 @@ const cards = [
 ];
 
 const ActivitiesCarousel = () => {
-  const { setTitle, setModalContent, setModalOpen } = useModalContext();
-  const onClick = (idx) => {
-    const { title, ModalContent } = cards[idx];
-    setTitle(title);
-    setModalContent(ModalContent);
-    setModalOpen(true);
-  };
+  const { index, modalOpen, onClick, onCancel } = useModalStates();
+  const { title, ModalContent } = cards[index];
 
   return (
-    <ContentCarouselContainer>
-      {cards.map(({ image, ...rest }, idx) => {
-        const img = require(`../../images/activities/logos/${image}`).default;
-        return (
-          <ContentItem
-            onClick={() => onClick(idx)}
-            key={idx}
-            image={img}
-            {...rest}
-          />
-        );
-      })}
-    </ContentCarouselContainer>
+    <div>
+      <ContentCarouselContainer>
+        {cards.map(({ image, ...rest }, idx) => {
+          const img = require(`../../images/activities/logos/${image}`).default;
+          return (
+            <ContentItem
+              onClick={() => onClick(idx)}
+              key={idx}
+              image={img}
+              {...rest}
+            />
+          );
+        })}
+      </ContentCarouselContainer>
+      <ModalContainer title={title} visible={modalOpen} onCancel={onCancel}>
+        <ModalContent />
+      </ModalContainer>
+    </div>
   );
 };
 

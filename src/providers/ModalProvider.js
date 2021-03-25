@@ -4,6 +4,7 @@ const ModalContext = createContext(null);
 
 export const useModalContext = () => {
   const modalContext = useContext(ModalContext);
+  console.log(modalContext);
   return modalContext;
 };
 

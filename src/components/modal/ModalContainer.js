@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Modal from './Modal';
 import { useVerticalCarouselContext } from '../../providers/SlickProvider';
-import { useModalContext } from '../../providers/ModalProvider';
 
 const settings = {
   footer: null,
@@ -12,27 +11,16 @@ const settings = {
   destroyOnClose: true,
 };
 
-const ModalContainer = ({ ...rest }) => {
+const ModalContainer = ({ children, visible, ...rest }) => {
   const { setStuck } = useVerticalCarouselContext();
-  const { title, ModalContent, isOpen, setModalOpen } = useModalContext();
-
-  const onCancel = () => {
-    setModalOpen(false);
-  };
 
   useEffect(() => {
-    setStuck(isOpen);
-  }, [isOpen]);
+    setStuck(visible);
+  }, [visible]);
 
   return (
-    <Modal
-      visible={isOpen}
-      title={title}
-      onCancel={onCancel}
-      {...settings}
-      {...rest}
-    >
-      <ModalContent />
+    <Modal visible={visible} {...settings} {...rest}>
+      {children}
     </Modal>
   );
 };
