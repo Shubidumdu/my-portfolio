@@ -11,8 +11,9 @@ const DnA = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <ModalBody>
-        국민대학교 빅데이터경영통계학회 D&A ML Session에 참여, 활동했습니다.
-        머신러닝 교육과 함께 학회 자체적인 컴티피션을 경험했습니다.
+        - 국민대 빅데이터경영통계학회 D&A <br />- ML Session에 참여하여 활동
+        <br />- 머신러닝 교육 및 스터디 진행
+        <br />- 데이터 예측 컴피티션
       </ModalBody>
     </div>
   );

@@ -12,9 +12,10 @@ const LikeLionDesign = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <ModalBody>
-        멋쟁이 사자처럼 디자인(크리에이티브) 1기로 활동하였습니다. Adobe XD를
-        위주로 포토샵, 일러스트레이터, 프리미어와 같은 디자인 툴과 관련된 교육을
-        들을 수 있었습니다.
+        - Adobe 디자인 툴 교육 동아리
+        <br />
+        - Adobe XD를 위주로 각종 Adobe 툴 교육 수료
+        <br />- 국민대/숙명여대/성균관대 디자인 세미나 개최
       </ModalBody>
     </div>
   );

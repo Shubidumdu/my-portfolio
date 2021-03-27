@@ -34,7 +34,7 @@ const MingleTown = () => {
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <EnterButton href="https://www.mingletown.co.kr" />
       <ModalBody>
-        (주)더몽의 쉐어하우스 중개 플랫폼 &quot;밍글타운&quot;을 개발했습니다.
+        - 더몽의 쉐어하우스 플랫폼
         <TagList tags={stacks} />
       </ModalBody>
     </div>

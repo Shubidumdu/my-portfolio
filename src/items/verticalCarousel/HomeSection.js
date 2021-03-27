@@ -15,6 +15,8 @@ const Container = styled.div`
     ${({ theme }) =>
       theme.mode === 'light' ? theme.colors.sub : theme.colors.black};
   flex-direction: column;
+  text-align: center;
+  word-break: keep-all;
 
   @media (max-width: 550px) {
     border-radius: 0;
@@ -44,7 +46,7 @@ const MediumTitle = styled.div`
   font-size: 1rem;
 
   @media (max-width: 320px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 `;
 
@@ -53,7 +55,7 @@ const LargeTitle = styled.div`
   font-size: 1.5rem;
 
   @media (max-width: 320px) {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 `;
 

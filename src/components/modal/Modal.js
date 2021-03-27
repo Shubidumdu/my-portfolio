@@ -31,6 +31,8 @@ const StyledModal = styled(M)`
           theme.mode === 'light'
             ? theme.colors.black
             : theme.colors.white} !important;
+        font-weight: ${({ theme }) =>
+          theme.mode === 'light' ? 'bold' : 'normal'};
       }
     }
 
@@ -39,6 +41,8 @@ const StyledModal = styled(M)`
         theme.mode === 'light'
           ? theme.colors.black
           : theme.colors.white} !important;
+      font-weight: ${({ theme }) =>
+        theme.mode === 'light' ? 'bold' : 'normal'};
     }
   }
 `;

@@ -55,6 +55,7 @@ const MobileHeaderWrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: ${({ theme }) => (theme.mode === 'light' ? 'bold' : 'normal')};
 
   @media (min-width: 700px) {
     display: none;

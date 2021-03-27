@@ -25,9 +25,7 @@ const CopyCats = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <ModalBody>
-        SNS형 성대모사 플랫폼을 만들어 보고자했던 프로젝트 카피캣츠입니다.
-        여러모로 부족한 점이 많지만 처음으로 혼자서 시행착오도 많이 겪으며
-        꾸역꾸역 만들어냈다는 점에서 애착이 가는 프로젝트입니다.
+        - 성대모사 SNS 플랫폼 <br />- 불안정한 측면이 많아 배포 진행하지 않았음
         <TagList tags={stacks} />
       </ModalBody>
     </div>

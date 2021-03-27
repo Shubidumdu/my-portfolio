@@ -24,6 +24,7 @@ const CardWrap = styled.div`
 `;
 
 const StyledCard = styled(C)`
+  word-break: keep-all;
   position: relative;
   background: ${({ theme }) =>
     theme.mode === 'light' ? theme.colors.white : theme.colors.sub};

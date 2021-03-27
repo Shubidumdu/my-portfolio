@@ -27,8 +27,7 @@ const HumanFace = () => {
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <EnterButton href="https://human-face-report.herokuapp.com/" />
       <ModalBody>
-        네이버 Clova API를 이용한 얼굴 이미지 분석 웹 애플리케이션
-        인간안면보고서를 개발했습니다.
+        - 얼굴 이미지 분석 웹 앱 <br />- Naver Clova API를 활용
         <TagList tags={stacks} />
       </ModalBody>
     </div>

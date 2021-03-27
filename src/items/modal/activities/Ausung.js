@@ -12,8 +12,8 @@ const Ausung = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <ModalBody>
-        국민대학교 밴드동아리 아우성에서 베이시스트로 활동했습니다. 2015년에는
-        연출부장 및 총무를 겸했습니다.
+        - 국민대학교 밴드동아리 아우성에서 베이시스트 활동 <br /> - 2015년
+        연출부장 및 총무
       </ModalBody>
     </div>
   );

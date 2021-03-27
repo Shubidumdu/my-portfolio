@@ -12,14 +12,14 @@ import LikeLionDesign from '../modal/activities/LikeLionDesign';
 const cards = [
   {
     title: '아우성',
-    desc: '국민대학교 밴드 동아리',
+    desc: '국민대 밴드 동아리',
     image: 'ausung.jpg',
     sub: '2014.12 ~ 2020.02',
     ModalContent: Ausung,
   },
   {
     title: '멋쟁이 사자처럼',
-    desc: '웹 프로그래밍 연합 동아리',
+    desc: '웹 개발 연합 동아리',
     image: 'likelion.png',
     sub: '2018.03 ~ 2018.12',
     ModalContent: LikeLion,
@@ -33,7 +33,7 @@ const cards = [
   },
   {
     title: 'D&A ML Session',
-    desc: '국민대학교 빅데이터경영통계 학회',
+    desc: '국민대 빅데이터경영통계 학회',
     image: 'dna.png',
     sub: '2018.08 ~ 2018.12',
     ModalContent: DnA,

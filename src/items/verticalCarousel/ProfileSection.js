@@ -33,7 +33,6 @@ const InfoWrap = styled.div`
   flex-direction: column;
 
   @media (orientation: portrait) {
-    margin-top: 2rem;
     width: 100%;
   }
 `;
@@ -66,28 +65,17 @@ const InfoHead = styled.div`
   @media (max-width: 550px) {
     font-size: 0.8rem;
   }
-
-  @media (max-width: 320px) {
-    font-size: 0.6rem;
-  }
 `;
 
 const InfoDesc = styled.div`
   font-size: 1rem;
+  word-break: keep-all;
 
   @media (max-width: 550px) {
-    font-size: 1rem;
-
-    & > span {
-      font-size: 0.8rem;
-    }
-  }
-
-  @media (max-width: 320px) {
     font-size: 0.8rem;
 
     & > span {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
     }
   }
 `;

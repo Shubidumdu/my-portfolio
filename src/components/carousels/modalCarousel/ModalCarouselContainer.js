@@ -8,6 +8,7 @@ const settings = {
   dots: true,
   dotsClass: 'dot-buttons',
   slidesToShow: 1,
+  draggable: false,
   slidesToScroll: 1,
   appendDots: function Dots(origin) {
     return <Paginations origin={origin} />;

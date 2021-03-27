@@ -12,8 +12,12 @@ const LikeLion = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <ModalBody>
-        전국 연합 웹 개발 동아리 &quot;멋쟁이 사자처럼&quot; 6기로
-        활동하였습니다. 웹 개발에 처음으로 눈 뜰 수 있었던 소중한 경험입니다.
+        - 웹 개발 입문
+        <br />
+        - HTML / CSS / JS / Ruby on Rails
+        <br />
+        - 몇 차례 해커톤 경험
+        <br />
       </ModalBody>
     </div>
   );

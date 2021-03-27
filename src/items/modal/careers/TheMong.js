@@ -11,9 +11,9 @@ const TheMong = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <ModalBody>
-        인테리어 및 공간 임대 사업을 메인으로 하고 있는 기업 더몽에서 풀스택
-        개발자로 일하는 중 입니다. 프로젝트 개발 및 유지보수를 담당하고
-        있습니다.
+        - 프로젝트 개발 및 유지 및 보수 <br />
+        - 쉐어하우스 플랫폼 &apos;밍글타운&apos; 개발 <br />
+        - 자사 웹사이트 리뉴얼 <br />- 자체 서비스 예약 모듈 개발
       </ModalBody>
     </div>
   );

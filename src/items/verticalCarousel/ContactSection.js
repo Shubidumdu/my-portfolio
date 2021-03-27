@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { RiInstagramFill, RiKakaoTalkFill, RiMailFill } from 'react-icons/ri';
+import {
+  RiGithubFill,
+  RiInstagramFill,
+  RiKakaoTalkFill,
+  RiMailFill,
+  RiStackOverflowFill,
+} from 'react-icons/ri';
 import VerticalCarouselCard from '../../components/carousels/verticalCarousel/VerticalCarouselCard';
 import VerticalCarouselInner from '../../components/carousels/verticalCarousel/VerticalCarouselInner';
 
 const Container = styled.div`
+  font-weight: ${({ theme }) => (theme.mode === 'light' ? 'bold' : 'normal')};
   display: flex;
   position: relative;
   width: 100%;
@@ -68,7 +75,7 @@ const InfoDesc = styled.div`
 
   > span {
     padding-bottom: 0.2rem;
-    border-bottom: 2px solid ${({ theme }) => theme.colors.main};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.main};
   }
 
   font-size: 1rem;
@@ -98,6 +105,18 @@ const ContactSection = () => {
             </InfoHead>
             <InfoDesc>
               <span>@wongyosuh</span>
+            </InfoDesc>
+            <InfoHead>
+              <RiGithubFill size="2rem" />
+            </InfoHead>
+            <InfoDesc>
+              <span>Shubidumdu</span>
+            </InfoDesc>
+            <InfoHead>
+              <RiStackOverflowFill size="2rem" />
+            </InfoHead>
+            <InfoDesc>
+              <span>user:14672911</span>
             </InfoDesc>
           </InfoGrid>
         </Container>

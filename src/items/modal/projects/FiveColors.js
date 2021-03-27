@@ -29,7 +29,7 @@ const FiveColor = () => {
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <EnterButton href="https://d1ys81f4zruh8t.cloudfront.net/" />
       <ModalBody>
-        옷 색깔 조합 추천 PWA &apos;오깔라&apos;를 개발했습니다.
+        - 옷 색깔 조합 추천 PWA <br />- ETRI API와 Colormind API를 활용
         <TagList tags={stacks} />
       </ModalBody>
     </div>
