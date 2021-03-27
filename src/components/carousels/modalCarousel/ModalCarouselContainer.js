@@ -14,14 +14,6 @@ const settings = {
   },
 };
 
-// 기존 inner
-//
-// images.map((image, idx) => (
-//   <ImageWrap key={image}>
-//     <Image alt={image} key={idx} src={image} />
-//   </ImageWrap>
-// ));
-
 const ModalCarouselContainer = ({ children, ...rest }) => {
   return (
     <ModalCarousel {...settings} {...rest}>

@@ -1,37 +1,7 @@
 import React from 'react';
-import styled, { useTheme } from 'styled-components';
-import mainImgLight from '../../images/profile5.png';
-import mainImgDark from '../../images/profile1.png';
+import styled from 'styled-components';
 import VerticalCarouselCard from '../../components/carousels/verticalCarousel/VerticalCarouselCard';
 import VerticalCarouselInner from '../../components/carousels/verticalCarousel/VerticalCarouselInner';
-
-const ImgWrap = styled.div`
-  height: 70%;
-  width: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: 0.3s;
-
-  @media (max-width: 550px) {
-    width: 85%;
-    height: auto;
-  }
-`;
-
-const MainImg = styled.img`
-  /* width: 100%; */
-  height: 100%;
-  width: auto;
-
-  @media (max-width: 550px) {
-    width: 100%;
-    height: 100%;
-  }
-`;
 
 const Container = styled.div`
   display: flex;
@@ -61,8 +31,16 @@ const IntroWrap = styled.div`
   align-items: center;
 `;
 
+const Border = styled.div`
+  height: 0;
+  width: 2rem;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.main};
+  border-radius: 2px;
+  margin: 1rem;
+`;
+
 const MediumTitle = styled.div`
-  font-weight: 300;
+  font-weight: ${({ theme }) => (theme.mode === 'light' ? 'bold' : 'normal')};
   font-size: 1rem;
 
   @media (max-width: 320px) {
@@ -71,8 +49,8 @@ const MediumTitle = styled.div`
 `;
 
 const LargeTitle = styled.div`
-  font-weight: 300;
-  font-size: 2rem;
+  font-weight: ${({ theme }) => (theme.mode === 'light' ? 'bold' : 'normal')};
+  font-size: 1.5rem;
 
   @media (max-width: 320px) {
     font-size: 1.6rem;
@@ -80,25 +58,15 @@ const LargeTitle = styled.div`
 `;
 
 const HomeSection = () => {
-  const themeMode = useTheme().mode;
-
   return (
     <VerticalCarouselCard>
       <VerticalCarouselInner>
         <Container>
           <IntroWrap>
             <LargeTitle>안녕하세요</LargeTitle>
-            <MediumTitle>
-              트렌드와 발전을 중요시하는 개발자 서원교입니다
-            </MediumTitle>
+            <Border />
+            <MediumTitle>한 걸음씩 성장하는 개발자 서원교입니다</MediumTitle>
           </IntroWrap>
-          <ImgWrap>
-            {themeMode === 'light' ? (
-              <MainImg src={mainImgLight} />
-            ) : (
-              <MainImg src={mainImgDark} />
-            )}
-          </ImgWrap>
         </Container>
       </VerticalCarouselInner>
     </VerticalCarouselCard>

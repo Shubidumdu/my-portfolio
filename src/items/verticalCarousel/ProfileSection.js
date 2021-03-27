@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import profilImg from '../../images/profile2.png';
-import { Button } from 'antd';
-import { SiGithub, SiStackoverflow } from 'react-icons/si';
 import VerticalCarouselCard from '../../components/carousels/verticalCarousel/VerticalCarouselCard';
 import VerticalCarouselInner from '../../components/carousels/verticalCarousel/VerticalCarouselInner';
 
@@ -19,6 +16,7 @@ const Container = styled.div`
       theme.mode === 'light' ? theme.colors.sub : theme.colors.black};
   align-items: center;
   justify-content: center;
+  font-weight: ${({ theme }) => (theme.mode === 'light' ? 'bold' : 'normal')};
 
   @media (max-width: 550px) {
     border-radius: 0;
@@ -28,28 +26,6 @@ const Container = styled.div`
   @media (orientation: portrait) {
     flex-direction: column;
   }
-`;
-
-const ImgContainer = styled.div`
-  width: 16rem;
-  height: auto;
-  border: 10px solid
-    ${({ theme }) =>
-      theme.mode === 'light' ? theme.colors.white : theme.colors.sub};
-  box-shadow: -20px 20px 1px ${({ theme }) => theme.colors.main};
-
-  @media (orientation: portrait) {
-    flex-direction: column;
-    border: none;
-    box-shadow: 6px 6px 1px ${({ theme }) => theme.colors.main};
-    width: 40%;
-    height: auto;
-  }
-`;
-
-const ProfileImg = styled.img`
-  width: 100%;
-  height: 100%;
 `;
 
 const InfoWrap = styled.div`
@@ -67,6 +43,7 @@ const InfoGrid = styled.div`
   width: 32rem;
   height: auto;
   grid-template-columns: 30% auto;
+  grid-gap: 1rem;
 
   @media (orientation: portrait) {
     width: 100%;
@@ -81,6 +58,11 @@ const InfoHead = styled.div`
   justify-content: flex-end;
   padding-right: 1rem;
 
+  > span {
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.main};
+  }
+
   @media (max-width: 550px) {
     font-size: 0.8rem;
   }
@@ -91,7 +73,7 @@ const InfoHead = styled.div`
 `;
 
 const InfoDesc = styled.div`
-  font-size: 1.2rem;
+  font-size: 1rem;
 
   @media (max-width: 550px) {
     font-size: 1rem;
@@ -110,42 +92,28 @@ const InfoDesc = styled.div`
   }
 `;
 
-const LinkWrap = styled.div`
-  @media (orientation: portrait) {
-    width: 100%;
-  }
-`;
-
-const LinkButton = styled(Button)`
-  margin-top: 0.25rem;
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-
-  & + & {
-    margin-left: 1rem;
-  }
-`;
-
 const ProfileSection = () => {
   return (
     <VerticalCarouselCard>
       <VerticalCarouselInner>
         <Container>
-          <ImgContainer>
-            <ProfileImg src={profilImg} />
-          </ImgContainer>
           <InfoWrap>
             <InfoGrid>
-              <InfoHead>이름</InfoHead>
+              <InfoHead>
+                <span>이름</span>
+              </InfoHead>
               <InfoDesc>서원교</InfoDesc>
-              <InfoHead>생년월일</InfoHead>
+              <InfoHead>
+                <span>생년월일</span>
+              </InfoHead>
               <InfoDesc>95.08.12</InfoDesc>
-              <InfoHead>거주</InfoHead>
+              <InfoHead>
+                <span>거주지</span>
+              </InfoHead>
               <InfoDesc>서울특별시 관악구</InfoDesc>
-              <InfoHead>이메일</InfoHead>
-              <InfoDesc>skaty4870@naver.com</InfoDesc>
-              <InfoHead>학력</InfoHead>
+              <InfoHead>
+                <span>학력</span>
+              </InfoHead>
               <InfoDesc>
                 <span>국민대학교 빅데이터경영통계 심화전공</span>
               </InfoDesc>
@@ -153,23 +121,6 @@ const ProfileSection = () => {
               <InfoDesc>
                 <span>국민대학교 소프트웨어 부전공</span>
               </InfoDesc>
-              <InfoHead>계정</InfoHead>
-              <LinkWrap>
-                <LinkButton
-                  href="https://github.com/Shubidumdu"
-                  target="_blank"
-                  type="link"
-                >
-                  <SiGithub size="100%" />
-                </LinkButton>
-                <LinkButton
-                  href="https://stackoverflow.com/users/14672911/won-gyo-seo"
-                  target="_blank"
-                  type="link"
-                >
-                  <SiStackoverflow size="100%" />
-                </LinkButton>
-              </LinkWrap>
             </InfoGrid>
           </InfoWrap>
         </Container>

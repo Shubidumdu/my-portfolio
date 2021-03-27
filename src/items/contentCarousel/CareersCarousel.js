@@ -11,7 +11,7 @@ const cards = [
     title: '애드캡슐소프트',
     desc: '웹 퍼블리싱 인턴',
     image: 'adcapsule.png',
-    sub: '2018.06 ~ 2018.08',
+    sub: '2019.06 ~ 2019.08',
     ModalContent: Adcapsule,
   },
   {

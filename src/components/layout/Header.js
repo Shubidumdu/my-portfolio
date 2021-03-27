@@ -48,7 +48,7 @@ const StyledMenuItem = styled(Menu.Item)`
   margin: 0 !important;
   padding: 0 20px !important;
   top: 0 !important;
-  font-weight: 400;
+  font-weight: ${({ theme }) => (theme.mode === 'light' ? 'bold' : 'normal')};
 `;
 
 const MobileHeaderWrap = styled.div`

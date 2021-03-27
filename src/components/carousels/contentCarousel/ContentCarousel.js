@@ -13,6 +13,7 @@ const StyledCarousel = styled(Carousel)`
 
 const ArrowWrap = styled.div`
   display: ${({ noArrow }) => (noArrow ? 'none' : 'block')};
+
   @media (max-width: 480px) {
     display: block;
   }

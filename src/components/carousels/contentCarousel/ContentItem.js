@@ -48,6 +48,7 @@ const StyledCard = styled(C)`
 
   > .ant-card-body {
     position: relative;
+    font-weight: ${({ theme }) => (theme.mode === 'light' ? 'bold' : 'normal')};
   }
 `;
 
@@ -66,7 +67,9 @@ const StyledMeta = styled(Meta)`
   }
 `;
 
-const Title = styled.div``;
+const Title = styled.div`
+  font-weight: ${({ theme }) => (theme.mode === 'light' ? 'bold' : 'normal')};
+`;
 
 const Sub = styled.div`
   font-size: 0.7rem;

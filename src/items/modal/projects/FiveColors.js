@@ -26,7 +26,7 @@ const imageSrcs = [...Array(4).keys()].map(
 const FiveColor = () => {
   return (
     <div>
-      <ModalImageCarousel images={imageSrcs} />
+      <ModalImageCarousel imageSrcs={imageSrcs} />
       <EnterButton href="https://d1ys81f4zruh8t.cloudfront.net/" />
       <ModalBody>
         옷 색깔 조합 추천 PWA &apos;오깔라&apos;를 개발했습니다.
