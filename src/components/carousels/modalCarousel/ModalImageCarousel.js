@@ -1,6 +1,7 @@
 import { Image } from 'antd';
 import React from 'react';
 import styled from 'styled-components';
+import ImageSpinner from './ImageSpinner';
 import ModalCarouselContainer from './ModalCarouselContainer';
 
 const ImageWrapper = styled.div`
@@ -16,7 +17,7 @@ const ModalImageCarousel = ({ imageSrcs }) => {
     <ModalCarouselContainer>
       {imageSrcs.map((imageSrc, idx) => (
         <ImageWrapper key={idx}>
-          <Image alt={imageSrc} src={imageSrc} />
+          <Image alt={imageSrc} src={imageSrc} placeholder={<ImageSpinner />} />
         </ImageWrapper>
       ))}
     </ModalCarouselContainer>

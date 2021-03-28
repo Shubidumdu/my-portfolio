@@ -11,7 +11,6 @@ import ContactSection from './items/verticalCarousel/ContactSection';
 import Layout from './components/layout/Layout';
 import Content from './components/layout/Content';
 import HeaderContainer from './components/layout/HeaderContainer';
-// import ModalContainer from './components/modal/ModalContainer';
 
 const App = () => {
   return (
@@ -29,7 +28,6 @@ const App = () => {
           </VerticalCarouselContainer>
         </Content>
         <ThemeSwitch />
-        {/* <ModalContainer /> */}
       </Layout>
     </Provider>
   );

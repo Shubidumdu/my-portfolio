@@ -44,6 +44,7 @@
     "react-dom": "^17.0.1",
     "react-icons": "^4.1.0",
     "react-slick": "^0.27.13",
+    "react-spinners": "^0.10.6",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.1"
   },
