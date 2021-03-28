@@ -83,6 +83,7 @@ const DrawerMenuItem = styled(Menu.Item)`
   font-size: 1rem;
   display: flex !important;
   align-items: center !important;
+  font-weight: ${({ theme }) => (theme.mode === 'light' ? 'bold' : 'normal')};
 `;
 
 const EmptyDiv = styled.div`
