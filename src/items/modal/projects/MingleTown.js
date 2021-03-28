@@ -17,7 +17,6 @@ const stacks = [
   'Jest',
   'Testing-library/React',
   'postgreSQL',
-  'passport.js',
   'AWS S3',
   'AWS CloudFront',
   'AWS Elastic Beanstalk',

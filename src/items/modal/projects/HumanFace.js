@@ -9,7 +9,7 @@ const stacks = [
   'React',
   'Node.js',
   'Redux',
-  'Redux-thunk',
+  'Redux-Thunk',
   'Styled-components',
   'Express.js',
   'Naver Clova API',

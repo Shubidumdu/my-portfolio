@@ -39,11 +39,13 @@ const CarouselButtons = ({ onPrev, onNext }) => {
   return (
     <ButtonWrap>
       <StyledButton
+        tabIndex={-1}
         icon={<LeftIcon size="40px" />}
         onClick={onPrev}
         {...styleSettings}
       />
       <StyledButton
+        tabIndex={-1}
         icon={<RightIcon size="40px" />}
         onClick={onNext}
         {...styleSettings}

@@ -12,7 +12,6 @@ const stacks = [
   'SASS/SCSS',
   'Redux',
   'Kakao API',
-  'Heroku',
 ];
 
 const imageSrcs = [...Array(3).keys()].map(

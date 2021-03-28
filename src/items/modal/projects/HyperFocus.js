@@ -15,7 +15,7 @@ const HyperFocus = () => {
   return (
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
-      <EnterButton href="https://hyper-focus-time.herokuapp.com/" />
+      <EnterButton href="https://shubidumdu.github.io/hyper-focus-time/" />
       <ModalBody>
         - 반복 집중 / 휴식 웹 타이머
         <br />
