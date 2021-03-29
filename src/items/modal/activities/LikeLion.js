@@ -12,6 +12,8 @@ const LikeLion = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <ModalBody>
+        - 멋쟁이 사자처럼 6기
+        <br />
         - 웹 개발 입문
         <br />
         - HTML / CSS / JS / Ruby on Rails

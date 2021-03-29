@@ -12,7 +12,7 @@ import MingleTown from '../modal/projects/MingleTown';
 const cards = [
   {
     title: '카피캣츠',
-    desc: '성대모사 SNS 플랫폼',
+    desc: '성대모사 SNS',
     image: 'copycats.png',
     sub: '2019',
     ModalContent: CopyCats,
@@ -33,7 +33,7 @@ const cards = [
   },
   {
     title: '밍글타운',
-    desc: '쉐어하우스 중개 플랫폼',
+    desc: '쉐어하우스 플랫폼',
     image: 'mingletown.png',
     sub: '2020',
     ModalContent: MingleTown,

@@ -11,8 +11,8 @@ const TheMong = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <ModalBody>
-        - 프로젝트 개발 및 유지 및 보수 <br />
-        - 쉐어하우스 플랫폼 &apos;밍글타운&apos; 개발 <br />
+        - 프로젝트 개발 및 유지 보수 <br />
+        - 쉐어하우스 플랫폼 밍글타운 개발 <br />
         - 자사 웹사이트 리뉴얼 <br />- 자체 서비스 예약 모듈 개발
       </ModalBody>
     </div>

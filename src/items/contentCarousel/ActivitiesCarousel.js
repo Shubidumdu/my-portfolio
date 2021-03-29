@@ -39,7 +39,7 @@ const cards = [
     ModalContent: DnA,
   },
   {
-    title: '멋쟁이 사자처럼 디자인',
+    title: '멋쟁이 사자처럼 크리에이티브',
     desc: '디자인 교육 연합 동아리',
     image: 'likelion_design.png',
     sub: '2019.07 ~ 2019.12',

@@ -12,6 +12,8 @@ const LikeLionDesign = () => {
     <div>
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <ModalBody>
+        - 멋쟁이 사자처럼 크리에이티브 1기
+        <br />
         - Adobe 디자인 툴 교육 동아리
         <br />
         - Adobe XD를 위주로 각종 Adobe 툴 교육 수료
