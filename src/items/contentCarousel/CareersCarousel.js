@@ -18,7 +18,7 @@ const cards = [
     title: '더몽',
     desc: '프론트엔드 개발',
     image: 'themong.png',
-    sub: '2020.05 ~ ',
+    sub: '2020.05 ~ 2021.05',
     ModalContent: TheMong,
   },
 ];
