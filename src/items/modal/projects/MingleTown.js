@@ -33,7 +33,9 @@ const MingleTown = () => {
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <EnterButton href="https://www.mingletown.co.kr" />
       <ModalBody>
-        - 더몽의 쉐어하우스 플랫폼
+        - 이용자의 위치를 기반으로 근처의 쉐어하우스들을 카드 리스트 형태로 제공
+        <br />
+        - 카카오 지도 API를 활용한 위치 데이터 핸들링
         <TagList tags={stacks} />
       </ModalBody>
     </div>

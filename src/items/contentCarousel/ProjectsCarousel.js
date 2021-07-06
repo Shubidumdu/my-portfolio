@@ -8,6 +8,7 @@ import FiveColor from '../modal/projects/FiveColors';
 import HumanFace from '../modal/projects/HumanFace';
 import HyperFocus from '../modal/projects/HyperFocus';
 import MingleTown from '../modal/projects/MingleTown';
+import GameOfLife from '../modal/projects/GameOfLife';
 
 const cards = [
   {
@@ -44,6 +45,13 @@ const cards = [
     image: '5color.png',
     sub: '2020',
     ModalContent: FiveColor,
+  },
+  {
+    title: "Conway's game of life in 3D",
+    desc: '콘웨이의 생명게임',
+    image: 'gameoflife.png',
+    sub: '2021',
+    ModalContent: GameOfLife,
   },
 ];
 

@@ -17,9 +17,8 @@ const HyperFocus = () => {
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <EnterButton href="https://shubidumdu.github.io/hyper-focus-time/" />
       <ModalBody>
-        - 반복 집중 / 휴식 웹 타이머
-        <br />
-        - VanillaJS 기반으로 개발
+        - 추가적인 라이브러리 및 번들러 없이 VanillaJS만 사용 <br />
+        - Custom Element + Shadow DOM를 통한 웹 컴포넌트 단위 개발
         <TagList tags={stacks} />
       </ModalBody>
     </div>

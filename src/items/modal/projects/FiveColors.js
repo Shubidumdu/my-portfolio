@@ -29,7 +29,9 @@ const FiveColor = () => {
       <ModalImageCarousel imageSrcs={imageSrcs} />
       <EnterButton href="https://d1ys81f4zruh8t.cloudfront.net/" />
       <ModalBody>
-        - 옷 색깔 조합 추천 PWA <br />- ETRI API와 Colormind API를 활용
+        - ETRI API를 활용한 Human Parsing <br />
+        - Colormind API를 활용한 Color scheme generation <br />
+        - 새롭게 등장한 CSS 프레임워크인 Bulma를 경험해보고자 스택으로 활용
         <TagList tags={stacks} />
       </ModalBody>
     </div>
